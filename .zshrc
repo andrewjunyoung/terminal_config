@@ -30,10 +30,22 @@ alias "goto"="cd ~/Documents; cd"
 
 ##
 # prompt
-##
-PROMPT='[%B%h%b %F{yellow}%m%f %F{green}%n%f %B%U%2c%u%b]
+#
+
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    echo '>'
+}
+
+PROMPT='[%B%h%b %F{yellow}%m%f.%F{green}%n%f %B%U%2c%u%b]
 > '
-RPROMPT='%D %*'
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
+
+RPROMPT='[%D %*]'
 
 ##
 # colors
