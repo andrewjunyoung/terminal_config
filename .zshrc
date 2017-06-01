@@ -24,14 +24,16 @@ compinit
 alias "docs"="Documents"
 alias "l"="ls"
 alias "list"="ls -Ap"
-alias "lsall"="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias "whatsup"="cd ..; list"
 alias "goto"="cd ~/Documents; cd"
 
 ##
 # prompt
 ##
-
+PROMPT='[%B%h%b %F{yellow}%m%f %F{green}%n%f %B%U%2c%u%b]
+> '
+RPROMPT='%D %*'
 
 ##
 # colors

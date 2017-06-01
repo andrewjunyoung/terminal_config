@@ -20,9 +20,18 @@ if has("gui_running")
 
 syntax on
 
-" 'SET'-COMMANDS (LISTED ALPHABETICALLY)
+" recolor background past right margin
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(120,999),",")
+
+" 'set'-commands (listed alphabetically)
 " C
 set cursorline
+hi CursorLine term=bold cterm=bold ctermbg=235
+
+set cursorcolumn
+hi CursorColumn ctermbg=235
 
 " E
 set expandtab
@@ -36,6 +45,9 @@ set incsearch
 
 " N
 set number
+
+" R
+set ruler
 
 " S
 set softtabstop=4
