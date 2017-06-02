@@ -37,7 +37,7 @@ function prompt_char {
     echo '>'
 }
 
-PROMPT='[%B%h%b %F{yellow}%m%f.%F{green}%n%f %B%U%2c%u%b]
+PROMPT='[%B%h%b %D %* | %F{yellow}%m%f.%F{green}%n%f %B%U%2c%u%b]
 > '
 TMOUT=1
 
@@ -45,7 +45,7 @@ TRAPALRM() {
     zle reset-prompt
 }
 
-RPROMPT='[%D %*]'
+# RPROMPT='[%D %*]'
 
 ##
 # colors

@@ -50,8 +50,9 @@ set number
 set ruler
 
 " S
-set softtabstop=4
 set secure
+set shiftwidth=4
+set softtabstop=4
 
 " T
 set tabstop=4
