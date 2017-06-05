@@ -48,6 +48,7 @@ set number
 
 " R
 set ruler
+set relativenumber
 
 " S
 set secure
