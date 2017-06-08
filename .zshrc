@@ -25,8 +25,8 @@ alias "docs"="Documents"
 alias "l"="ls"
 alias "list"="ls -Ap"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-alias "whatsup"="cd ..; list"
-alias "goto"="cd ~/Documents; cd"
+alias "showup"="cd ..; list"
+alias "up"="cd .."
 
 ##
 # prompt
