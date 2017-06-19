@@ -21,12 +21,23 @@ compinit
 ##
 # alias
 ##
-alias "docs"="Documents"
-alias "l"="ls"
-alias "list"="ls -Ap"
+alias "cl"="clear; l"
+alias "l"="ls -Ap"
+alias "list"="l"
+alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-alias "showup"="cd ..; list"
 alias "up"="cd .."
+alias "upl"="cd ..; l"
+
+##
+# export
+##
+docs=~/Documents
+export docs
+dl=~/Downloads
+export dl
+pics=~/Pictures
+export pics
 
 ##
 # prompt
