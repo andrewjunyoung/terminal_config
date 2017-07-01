@@ -26,6 +26,9 @@ let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(120,999),",")
 
 " 'set'-commands (listed alphabetically)
+" B
+set backspace=2
+
 " C
 set cursorline
 hi CursorLine term=bold cterm=bold ctermbg=235

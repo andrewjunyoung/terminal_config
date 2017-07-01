@@ -38,6 +38,8 @@ dl=~/Downloads
 export dl
 pics=~/Pictures
 export pics
+code=~/Documents/biancheng
+export code
 
 ##
 # prompt
