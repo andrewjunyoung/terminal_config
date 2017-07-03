@@ -32,14 +32,14 @@ alias "upl"="cd ..; l"
 ##
 # export
 ##
-docs=~/Documents
-export docs
-dl=~/Downloads
-export dl
-pics=~/Pictures
-export pics
-code=~/Documents/biancheng
-export code
+wg=~/Documents
+export wg
+xz=~/Downloads
+export xz
+tp=~/Pictures
+export tp
+bc=~/Documents/biancheng
+export bc
 
 ##
 # prompt
@@ -77,9 +77,6 @@ exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 # setopt and unsetopt configs
 ##
 #
-
-# path to your oh-my-zsh configuration.
-    ZSH=$HOME/.oh-my-zsh
 
 # zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
