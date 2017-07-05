@@ -40,6 +40,10 @@ tp=~/Pictures
 export tp
 bc=~/Documents/biancheng
 export bc
+yy=~/Music
+export yy
+altair=~/Documents/biancheng/altair
+export altair
 
 ##
 # prompt

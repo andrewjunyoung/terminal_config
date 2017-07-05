@@ -11,26 +11,43 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/nomyb
+~MSle0/asymmetric
+
+# Last Substitute Search Pattern:
+~MSle0~&MAKE
 
 # Last Substitute String:
-$
+$CC
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1498919873,,"q"
-:wq
-|2,0,1498831345,,"wq"
+|2,0,1499251789,,"q"
+:x
+|2,0,1499251649,,"x"
 :w
-|2,0,1498830202,,"w"
+|2,0,1499251648,,"w"
+:wq
+|2,0,1499251237,,"wq"
+:W
+|2,0,1499250767,,"W"
+:%s/MAKE/CC/g
+|2,0,1499179932,,"%s/MAKE/CC/g"
+:q28j
+|2,0,1499179876,,"q28j"
+:q!
+|2,0,1499176882,,"q!"
+:call 
+|2,0,1499092113,,"call "
+:q?!
+|2,0,1499091940,,"q?!"
+:wq'
+|2,0,1499084883,,"wq'"
+:'<,'>sort
+|2,0,1499079159,,"'<,'>sort"
 :!w
 |2,0,1498829420,,"!w"
 :.!
 |2,0,1498735819,,".!"
-:q!
-|2,0,1498579026,,"q!"
-:wq'
-|2,0,1498577176,,"wq'"
 :w'
 |2,0,1498577162,,"w'"
 :wo
@@ -39,8 +56,6 @@ $
 |2,0,1498576799,,"set backspace=2 "
 :s
 |2,0,1498571112,,"s"
-:W
-|2,0,1498563301,,"W"
 :norm 80i#
 |2,0,1498559311,,"norm 80i#"
 :norm 80ia
@@ -55,8 +70,18 @@ $
 |2,0,1498473697,,"sort"
 
 # Search String History (newest to oldest):
+? MAKE
+|2,1,1499179932,,"MAKE"
+?/asymmetric
+|2,1,1499159787,47,"asymmetric"
+?/@
+|2,1,1499097605,47,"@"
+?/\@
+|2,1,1499097601,47,"\\@"
 ? @$
-|2,1,1498837468,,"@$"
+|2,1,1499084967,,"@$"
+?/\/
+|2,1,1499083537,47,"\\/"
 ?/nomyb
 |2,1,1498597981,47,"nomyb"
 ?/\#
@@ -75,302 +100,1024 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	1300
-|3,1,0,0,1,0,1498837468,"1300"
+"0	LINE	0
+	#
+|3,0,0,1,1,0,1499084967,"#"
 "1	LINE	0
 	
-|3,0,1,1,1,0,1498829422,""
+|3,0,1,1,1,0,1499251620,""
 "2	CHAR	0
-	# Create the 2d space for our problem
-	nx = 41
-	ny = 41
-	nt = 500
-	dx = 2. / (nx - 1) 
-	dy = 2. / (ny - 1)
-	x = numpy.linspace(0, 2, nx)
-	y = numpy.linspace(0, 2, ny)
-	X, Y = numpy.meshgrid(x, y)
+	def open_file(location): 
+	
+	    file_object = open(location, "r+")
+	    
+	
+	    file_object.write(heading1)
+	
+	    return file_object
+	    
+|3,0,2,0,9,0,1499251619,"def open_file(location): ","","    file_object = open(location, \"r+\")","    ","","    file_object.write(heading1)","","    return file_object","    "
+"3	CHAR	0
+	    heading1 = "// Results for cost / s"
+	    heading2 = "// Total cost / s"
+	    heading3 = "// Average cost = Total cost / iterations / s"
 	
 	
-|3,0,2,0,11,0,1498829417,"# Create the 2d space for our problem","nx = 41","ny = 41","nt = 500","dx = 2. / (nx - 1) ","dy = 2. / (ny - 1)","x = numpy.linspace(0, 2, nx)","y = numpy.linspace(0, 2, ny)","X, Y = numpy.meshgrid(x, y)","",""
-"3	LINE	0
-	
-|3,0,3,1,1,0,1498829411,""
-"4	CHAR	0
-	nx = 41
-	ny = 41
-	nt = 500
-	dx = 2. / (nx - 1) 
-	dy = 2. / (ny - 1)
-	
-|3,0,4,0,6,0,1498829390,"nx = 41","ny = 41","nt = 500","dx = 2. / (nx - 1) ","dy = 2. / (ny - 1)",""
+|3,0,3,0,5,0,1499251603,"    heading1 = \"// Results for cost / s\"","    heading2 = \"// Total cost / s\"","    heading3 = \"// Average cost = Total cost / iterations / s\"","",""
+"4	LINE	0
+	    
+|3,0,4,1,1,0,1499251590,"    "
 "5	LINE	0
-	# Initializing the grid
-|3,0,5,1,1,0,1498829386,"# Initializing the grid"
-"6	CHAR	0
-	# heat_flux1 = heat_conduction1 * temperature.gradient
-	# heat_flux2 = heat_conduction2 * temperature.gradient
-	
-	
-|3,0,6,0,4,0,1498829039,"# heat_flux1 = heat_conduction1 * temperature.gradient","# heat_flux2 = heat_conduction2 * temperature.gradient","",""
-"7	CHAR	0
-	heat_flux1 = heat_conduction1 * temperature.gradient
-	heat_flux2 = heat_conduction2 * temperature.gradient
-	
-	
-|3,0,7,0,4,0,1498829030,"heat_flux1 = heat_conduction1 * temperature.gradient","heat_flux2 = heat_conduction2 * temperature.gradient","",""
+	    return 
+|3,0,5,1,1,0,1499251342,"    return "
+"6	LINE	0
+	def collect
+|3,0,6,1,1,0,1499251311,"def collect"
+"7	LINE	0
+	def get_
+|3,0,7,1,1,0,1499251256,"def get_"
 "8	LINE	0
-	# Set the values for 
-|3,0,8,1,1,0,1498829027,"# Set the values for "
-"9	CHAR	0
-	x = numpy.linspace(0, 2, nx)
-	y = numpy.linspace(0, 2, ny)
-	X, Y = numpy.meshgrid(x, y)
-|3,0,9,0,3,0,1498828863,"x = numpy.linspace(0, 2, nx)","y = numpy.linspace(0, 2, ny)","X, Y = numpy.meshgrid(x, y)"
-"-	CHAR	0
-	1300
-|3,0,36,0,1,0,1498829842,"1300"
+	INDIV
+|3,0,8,1,1,0,1499251169,"INDIV"
+"9	LINE	0
+	
+|3,0,9,1,1,0,1499251163,""
+""-	CHAR	0
+	location
+|3,1,36,0,1,0,1499251629,"location"
 
 # File marks:
-'0  82  0  ~/.viminfo
-|4,48,82,0,1498919873,"~/.viminfo"
-'1  119  0  ~/.zshrc
-|4,49,119,0,1498837561,"~/.zshrc"
-'2  119  0  ~/.zshrc
-|4,50,119,0,1498837545,"~/.zshrc"
-'3  1  0  ~/.z
-|4,51,1,0,1498837538,"~/.z"
-'4  119  0  ~/.zshrc
-|4,52,119,0,1498837514,"~/.zshrc"
-'5  119  0  ~/.zshrc
-|4,53,119,0,1498837514,"~/.zshrc"
-'6  1418  0  ~/.zcompdump
-|4,54,1418,0,1498837502,"~/.zcompdump"
-'7  1  0  ~/.zshrc
-|4,55,1,0,1498837485,"~/.zshrc"
-'8  1  0  ~/.zshrc
-|4,56,1,0,1498837485,"~/.zshrc"
-'9  1  0  ~/.zshrc
-|4,57,1,0,1498837485,"~/.zshrc"
+'C  1  55  ~/Documents/public/wangye/blog/optimal-cryptocurrency-area.txt
+|4,67,1,55,1499098420,"~/Documents/public/wangye/blog/optimal-cryptocurrency-area.txt"
+'0  11  0  ~/.viminfo
+|4,48,11,0,1499251789,"~/.viminfo"
+'1  14  14  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,49,14,14,1499251649,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'2  14  15  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,50,14,15,1499251237,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+'3  13  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,51,13,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'4  9  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,52,9,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'5  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,53,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'6  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,54,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'7  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,55,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'8  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,56,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+'9  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,57,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
 
 # Jumplist (newest first):
--'  82  0  ~/.viminfo
-|4,39,82,0,1498919873,"~/.viminfo"
+-'  11  0  ~/.viminfo
+|4,39,11,0,1499251789,"~/.viminfo"
 -'  1  0  ~/.viminfo
-|4,39,1,0,1498919861,"~/.viminfo"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837561,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837561,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837559,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837559,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837545,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837545,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837541,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837541,"~/.zshrc"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  1  0  ~/.z
-|4,39,1,0,1498837538,"~/.z"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837514,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837514,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837514,"~/.zshrc"
--'  119  0  ~/.zshrc
-|4,39,119,0,1498837514,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837505,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837505,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837505,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837505,"~/.zshrc"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1418  0  ~/.zcompdump
-|4,39,1418,0,1498837502,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zcompdump
-|4,39,1,0,1498837493,"~/.zcompdump"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1498837485,"~/.zshrc"
--'  7  0  ~/.vimrc
-|4,39,7,0,1498837475,"~/.vimrc"
--'  7  0  ~/.vimrc
-|4,39,7,0,1498837475,"~/.vimrc"
+|4,39,1,0,1499251787,"~/.viminfo"
+-'  14  14  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,14,14,1499251649,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  14  14  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,14,14,1499251649,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  1  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,1,1499251605,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  1  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,1,1499251605,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  14  15  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,14,15,1499251237,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  14  15  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,14,15,1499251237,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  14  15  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,14,15,1499251237,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  14  15  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,14,15,1499251237,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  4  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,4,0,1499251162,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  4  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,4,0,1499251162,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  4  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,4,0,1499251162,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  4  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,4,0,1499251162,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,1,0,1499251150,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,1,0,1499251150,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,1,0,1499251150,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+|4,39,1,0,1499251150,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt"
+-'  13  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,13,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  9  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,9,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  9  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,9,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  13  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,13,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  9  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,9,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  9  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,9,0,1499251133,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499251051,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499251051,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499251051,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499251051,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  1  0  ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+|4,39,1,0,1499250920,"~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  65  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,65,1499250844,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  1  0  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,1,0,1499250794,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  31  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,31,1499250786,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  31  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,31,1499250786,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  31  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,31,1499250786,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
+-'  8  31  ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+|4,39,8,31,1499250786,"~/Documents/biancheng/altair/src/pull_request/pull_request.c"
 
 # History of marks within files (newest to oldest):
 
 > ~/.viminfo
-	*	1498919873	0
-	"	82	0
+	*	1499251788	0
+	"	11	0
+
+> ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/get-average-cost.py
+	*	1499251648	0
+	"	14	14
+	^	14	15
+	.	14	14
+	+	1	38
+	+	1	0
+	+	1	13
+	+	7	0
+	+	8	15
+	+	1	31
+	+	8	16
+	+	7	16
+	+	12	0
+	+	13	0
+	+	1	4
+	+	1	0
+	+	7	0
+	+	1	3
+	+	1	37
+	+	1	19
+	+	7	0
+	+	8	0
+	+	12	0
+	+	13	16
+	+	15	29
+	+	11	0
+	+	7	13
+	+	1	0
+	+	1	31
+	+	1	0
+	+	1	4
+	+	1	0
+	+	1	39
+	+	1	30
+	+	1	16
+	+	1	33
+	+	1	59
+	+	1	33
+	+	1	38
+	+	1	61
+	+	7	3
+	+	1	27
+	+	9	13
+	+	14	10
+	+	8	0
+	+	2	9
+	+	1	21
+	+	1	0
+	+	7	0
+	+	1	0
+	+	2	1
+	+	6	3
+	+	1	0
+	+	9	43
+	+	10	3
+	+	14	14
+
+> ~/Documents/biancheng/altair/docs/research/cryptowatch/cost/results.txt
+	*	1499251234	0
+	"	14	15
+	^	14	16
+	.	14	15
+	+	1	0
+	+	4	0
+	+	1	0
+	+	3	0
+	+	4	0
+	+	1	0
+	+	2	0
+	+	1	2
+	+	11	0
+	+	12	12
+	+	13	0
+	+	14	14
+	+	12	9
+	+	14	15
+
+> ~/Documents/biancheng/altair/src/pull_request/pull_request.c
+	*	1499250843	0
+	"	8	65
+	^	8	66
+	.	8	65
+	+	4	17
+	+	8	20
+	+	4	0
+	+	3	17
+	+	8	65
+
+> ~/Documents/biancheng/altair/src/pull_request/main.c
+	*	1499250640	0
+	"	1	0
+
+> ~/Documents/biancheng/altair/src/res/cryptowatch/cryptowatch-markets.txt
+	*	1499181210	0
+	"	1148	0
+	^	1148	1
+	.	1148	0
+	+	1148	0
+	+	1147	5
+	+	1148	0
+
+> ~/Documents/biancheng/altair/.git/config
+	*	1499180632	0
+	"	1	0
 
 > ~/.zshrc
-	*	1498837559	0
-	"	119	0
-	^	42	11
-	.	42	10
+	*	1499180614	0
+	"	46	12
+	^	46	13
+	.	46	12
 	+	41	25
 	+	36	0
 	+	41	26
 	+	42	10
+	+	35	1
+	+	36	8
+	+	37	1
+	+	38	8
+	+	39	1
+	+	40	8
+	+	42	8
+	+	41	1
+	+	86	0
+	+	85	0
+	+	84	0
+	+	43	9
+	+	44	8
+	+	31	0
+	+	45	34
+	+	46	12
+
+> ~/.zshrcc
+	*	1499180573	0
+	"	1	0
+
+> ~/Documents/biancheng/altair/Makefile
+	*	1499180155	0
+	"	7	9
+	^	7	10
+	.	7	9
+	+	1	0
+	+	1	16
+	+	1	6
+	+	1	13
+	+	1	17
+	+	1	6
+	+	1	22
+	+	1	50
+	+	1	16
+	+	27	39
+	+	4	41
+	+	3	6
+	+	14	6
+	+	11	7
+	+	6	7
+	+	7	8
+	+	6	8
+	+	7	9
+
+> ~/Documents/biancheng/altair/docs/research/cryptowatch-api-costs
+	*	1499179825	0
+	"	8	4
+	^	8	5
+	.	8	4
+	+	1	5
+	+	2	4
+	+	3	4
+	+	4	5
+	+	5	5
+	+	7	5
+	+	8	4
+
+> ~/Documents/biancheng/altair/README.md
+	*	1499178531	0
+	"	3	231
+	^	3	233
+	.	3	232
+	+	1	7
+	+	2	0
+	+	3	232
+
+> ~/Documents/public/wangye/blog/tmp
+	*	1499176881	0
+	"	16	3
+	^	16	4
+	.	16	3
+	+	1	25
+	+	2	0
+	+	1	0
+	+	2	0
+	+	2	10
+	+	3	14
+	+	4	15
+	+	4	22
+	+	6	0
+	+	8	0
+	+	4	0
+	+	3	6
+	+	2	6
+	+	3	6
+	+	5	12
+	+	9	0
+	+	1	44
+	+	9	46
+	+	1	26
+	+	11	0
+	+	12	6
+	+	13	0
+	+	14	0
+	+	14	5
+	+	14	9
+	+	14	3
+	+	9	3
+	+	14	9
+	+	15	0
+	+	10	23
+	+	15	0
+	+	15	2
+	+	10	27
+	+	15	4
+	+	10	3
+	+	17	0
+	+	15	4
+	+	10	53
+	+	17	0
+	+	15	4
+	+	17	1
+	+	17	0
+	+	17	1
+	+	17	0
+	+	10	15
+	+	18	0
+	+	17	0
+	+	16	0
+	+	14	5
+	+	16	3
+	w	10	1
+
+> ~/Documents/public/wangye/blog/optimal-cryptocurrency-area.txt
+	*	1499160092	0
+	"	1	4
+	.	20	0
+	+	1	0
+	+	1	318
+	+	4	88
+	+	4	3
+	+	1	3
+	+	4	109
+	+	4	8
+	+	4	157
+	+	4	0
+	+	5	3
+	+	5	105
+	+	4	0
+	+	2	0
+	+	4	0
+	+	3	9
+	+	4	0
+	+	5	1341
+	+	6	919
+	+	6	0
+	+	6	1017
+	+	8	0
+	+	1	493
+	+	8	27
+	+	9	406
+	+	10	3
+	+	9	432
+	+	10	436
+	+	20	0
+	+	20	31
+	+	20	10
+	+	10	578
+	+	12	332
+	+	12	0
+	+	12	554
+	+	12	210
+	+	12	773
+	+	12	65
+	+	12	794
+	+	13	242
+	+	13	0
+	+	13	460
+	+	13	555
+	+	14	136
+	+	14	35
+	+	14	774
+	+	15	506
+	+	15	405
+	+	15	796
+	+	20	0
+	+	15	280
+	+	16	98
+	+	17	585
+	+	18	553
+	+	20	0
+	+	10	0
+	+	13	0
+	+	12	12
+	+	11	437
+	+	9	638
+	+	11	760
+	+	20	21
+	+	12	602
+	+	20	0
+	+	19	875
+	+	20	0
+	+	20	83
+	+	20	0
+	b	19	309
+
+> ~/Documents/public/papers/optimal-currency-borders/what-are-the-optimal-areas-for-currencies.tex
+	*	1499098116	0
+	"	13	0
+	^	15	0
+	.	12	748
+	+	1	64
+	+	1	31
+	+	17	12
+	+	2	0
+	+	3	79
+	+	5	57
+	+	6	24
+	+	8	15
+	+	11	15
+	+	13	0
+	+	13	91
+	+	5	16
+	+	13	171
+	+	14	0
+	+	13	144
+	+	13	0
+	+	12	748
+	b	12	74
+
+> ~/Documents/public/gongzuo/andrew-jun-young-cv.tex
+	*	1499097822	0
+	"	30	44
+	^	30	45
+	.	30	44
+	+	1	79
+	+	2	13
+	+	3	12
+	+	4	1
+	+	5	9
+	+	6	1
+	+	2	36
+	+	6	17
+	+	7	1
+	+	6	45
+	+	8	10
+	+	9	7
+	+	10	0
+	+	11	0
+	+	9	5
+	+	10	0
+	+	11	79
+	+	12	0
+	+	13	37
+	+	15	36
+	+	16	0
+	+	14	0
+	+	16	18
+	+	24	9
+	+	20	0
+	+	16	19
+	+	20	79
+	+	21	0
+	+	22	79
+	+	21	29
+	+	20	0
+	+	19	0
+	+	20	0
+	+	22	1
+	+	1	0
+	+	22	80
+	+	22	0
+	+	21	29
+	+	24	10
+	+	27	0
+	+	26	0
+	+	23	0
+	+	26	0
+	+	24	38
+	+	25	0
+	+	26	87
+	+	27	0
+	+	32	0
+	+	27	11
+	+	31	0
+	+	28	60
+	+	29	0
+	+	30	40
+	+	32	109
+	+	32	26
+	+	17	0
+	+	18	15
+	+	34	13
+	+	17	0
+	+	28	61
+	+	30	44
+	m	6	1
+	w	20	0
+
+> ~/Documents/public/gongzuo/andrew-j-young-cv.tex
+	*	1499097614	0
+	"	84	77
+	.	27	0
+	+	27	0
+
+> ~/Documents/public/gongzuo/andrew-j-young-
+	*	1499097586	0
+	"	1	0
+	^	1	3
+	.	1	2
+	+	1	2
+
+> ~/Documents/biancheng/veritas/src/Makefile
+	*	1499085278	0
+	"	10	9
+	^	10	15
+	.	10	0
+	+	8	16
+	+	9	0
+	+	8	0
+	+	10	0
+
+> ~/Documents/biancheng/veritas/docs/variables
+	*	1499085221	0
+	"	1	0
+
+> ~/Documents/biancheng/veritas/docs/methods
+	*	1499085218	0
+	"	1	0
+
+> ~/Documents/biancheng/veritas/docs/files
+	*	1499085213	0
+	"	32	0
+
+> ~/Documents/biancheng/veritas/Makefile
+	*	1499085191	0
+	"	16	16
+	^	27	23
+	.	16	16
+	+	6	0
+	+	28	0
+	+	6	0
+	+	29	55
+	+	17	0
+	+	16	17
+	+	28	0
+	+	27	16
+	+	29	73
+	+	6	0
+	+	29	0
+	+	5	0
+	+	29	0
+	+	27	16
+	+	16	16
+
+> ~/Documents/biancheng/veritas/.Makefile.swp
+	*	1499085049	0
+	"	1	0
+
+> ~/Documents/biancheng/c/arm11-2016/src/Makefile
+	*	1499085016	0
+	"	20	0
+
+> ~/Documents/biancheng/c/arm11-2016/Makefile
+	*	1499085005	0
+	"	26	0
+	^	26	32
+	.	27	0
+	+	27	0
+
+> ~/Documents/biancheng/veritas/src/main/pull_request.c
+	*	1499084982	0
+	"	14	0
+
+> ~/Documents/siren/yuance
+	*	1499084955	0
+	"	1	0
+	^	2	0
+	.	2	0
+	+	1	108
+	+	2	0
+
+> ~/Documents/siren/y
+	*	1499084949	0
+	"	1	0
+
+> ~/Documents/siren/zuzhi/'
+	*	1499084930	0
+	"	1	0
+
+> ~/Documents/siren/zuzhi/zhanghu
+	*	1499084883	0
+	"	11	7
+	^	11	8
+	.	11	7
+	+	6	5
+	+	4	8
+	+	5	8
+	+	4	8
+	+	5	9
+	+	1	0
+	+	1	67
+	+	7	6
+	+	1	0
+	+	2	0
+	+	8	7
+	+	9	8
+	+	10	7
+	+	11	7
+
+> ~/.vimrc
+	*	1499083440	0
+	"	59	0
+	^	31	0
+	.	31	0
+	+	30	14
+	+	31	0
+
+> ~/Documents/siren/yijian/wailaiyu.txt
+	*	1499079415	0
+	"	12	0
+	^	12	0
+	.	12	0
+	+	1	11
+	+	1	20
+	+	2	4
+	+	1	0
+	+	1	14
+	+	2	22
+	+	4	23
+	+	4	0
+	+	2	18
+	+	3	18
+	+	4	0
+	+	5	0
+	+	4	22
+	+	5	17
+	+	6	0
+	+	5	0
+	+	7	0
+	+	6	25
+	+	7	17
+	+	8	19
+	+	9	23
+	+	8	23
+	+	7	23
+	+	6	23
+	+	5	23
+	+	1	23
+	+	1	0
+	+	9	30
+	+	10	32
+	+	11	0
+	+	12	0
+	+	1	0
+	+	12	0
+	w	2	1
+
+> ~/Documents/siren/fuzhi-zhantie
+	*	1499009341	0
+	"	5	14
+	^	5	15
+	.	5	14
+	+	1	2
+	+	2	0
+	+	3	199
+	+	5	14
+
+> ~/Documents/veritas/Makefile
+	*	1499008392	0
+	"	7	4
+	^	7	5
+	.	7	4
+	+	6	19
+	+	1	5
+	+	5	7
+	+	6	0
+	+	5	6
+	+	2	0
+	+	6	0
+	+	7	10
+	+	5	9
+	+	7	4
+	+	5	23
+	+	7	0
+	+	2	0
+	+	4	0
+	+	7	0
+	+	3	0
+	+	7	4
+
+> ~/Documents/veritas/src/main/pull_request.c
+	*	1499006678	0
+	"	36	32
+	^	34	33
+	.	34	32
+	+	1	0
+	+	1	6
+	+	1	0
+	+	1	2
+	+	1	3
+	+	1	5
+	+	45	0
+	+	1	53
+	+	44	0
+	+	43	9
+	+	44	0
+	+	43	52
+	+	1	0
+	+	41	0
+	+	1	0
+	+	3	0
+	+	1	7
+	+	40	0
+	+	36	6
+	+	2	18
+	+	36	13
+	+	26	26
+	+	36	44
+	+	40	12
+	+	40	0
+	+	36	32
+	+	27	36
+	+	36	53
+	+	27	36
+	+	40	0
+	+	36	10
+	+	40	0
+	+	36	63
+	+	27	37
+	+	4	0
+	+	22	0
+	+	7	16
+	+	9	38
+	+	10	0
+	+	21	0
+	+	13	29
+	+	13	54
+	+	15	0
+	+	12	11
+	+	13	52
+	+	15	17
+	+	13	33
+	+	13	0
+	+	15	32
+	+	16	31
+	+	19	0
+	+	18	42
+	+	20	18
+	+	11	81
+	+	6	31
+	+	5	0
+	+	6	43
+	+	23	79
+	+	24	41
+	+	26	34
+	+	27	58
+	+	25	17
+	+	26	0
+	+	37	0
+	+	26	7
+	+	27	3
+	+	36	8
+	+	39	16
+	+	38	0
+	+	27	58
+	+	27	0
+	+	36	0
+	+	27	51
+	+	27	124
+	+	35	0
+	+	27	57
+	+	33	19
+	+	27	85
+	+	29	30
+	+	30	32
+	+	31	25
+	+	32	0
+	+	35	19
+	+	33	20
+	+	35	0
+	+	33	21
+	+	34	0
+	+	28	0
+	+	34	32
+
+> ~/Documents/veritas/src/resources/cyrptowatch-markets.txt
+	*	1499006366	0
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1153	0
+	+	1	0
+
+> ~/Documents/biancheng/py/devito/.git/config
+	*	1499004424	0
+	"	17	0
+	^	17	0
+	.	17	0
+	+	20	14
+	+	17	0
+
+> ~/Documents/veritas/.git/config
+	*	1499004366	0
+	"	17	14
+	^	17	15
+	.	17	14
+	+	14	7
+	+	17	14
+
+> ~/Documents/veritas/src/main/main.c
+	*	1499003421	0
+	"	1	0
+
+> ~/Documents/veritas/docs/methods
+	*	1499003388	0
+	"	1	2
+	^	2	0
+	.	1	3
+	+	1	3
+
+> ~/Documents/biancheng/hs/Data.Equation/src/operators.hs
+	*	1498942211	0
+	"	1	0
+
+> ~/Documents/biancheng/hs/Data.Equation/src/defs.hs
+	*	1498929444	0
+	"	12	23
+	^	12	24
+	.	12	23
+	+	26	35
+	+	27	10
+	+	26	36
+	+	12	23
 
 > ~/.z
 	*	1498837537	0
@@ -379,14 +1126,6 @@ $
 > ~/.zcompdump
 	*	1498837500	0
 	"	1418	0
-
-> ~/.vimrc
-	*	1498837474	0
-	"	7	0
-	^	31	0
-	.	31	0
-	+	30	14
-	+	31	0
 
 > ~/Documents/biancheng/py/devito/examples/topology_optimization/topology_optimization.py
 	*	1498831343	0
@@ -851,30 +1590,6 @@ $
 	+	6	0
 	+	8	0
 
-> ~/Documents/public/papers/optimal-currency-borders/what-are-the-optimal-areas-for-currencies.tex
-	*	1498575660	0
-	"	15	0
-	^	15	0
-	.	12	748
-	+	1	64
-	+	1	31
-	+	17	12
-	+	2	0
-	+	3	79
-	+	5	57
-	+	6	24
-	+	8	15
-	+	11	15
-	+	13	0
-	+	13	91
-	+	5	16
-	+	13	171
-	+	14	0
-	+	13	144
-	+	13	0
-	+	12	748
-	b	12	74
-
 > ~/Documents/biancheng/sh/btc.sh
 	*	1498566770	0
 	"	1	0
@@ -965,14 +1680,6 @@ $
 	+	38	4
 	d	52	331
 
-> ~/Documents/siren/yuance
-	*	1498559580	0
-	"	2	0
-	^	2	0
-	.	2	0
-	+	1	108
-	+	2	0
-
 > ~/Documents/siren/principles
 	*	1498559423	0
 	"	1	0
@@ -1040,27 +1747,6 @@ $
 	+	14	79
 	+	22	79
 	+	32	79
-
-> ~/Documents/siren/zuzhi/zhanghu
-	*	1498558903	0
-	"	8	0
-	.	9	0
-	+	6	5
-	+	4	8
-	+	5	8
-	+	4	8
-	+	5	9
-	+	1	0
-	+	1	67
-	+	7	6
-	+	1	0
-	+	2	0
-	+	8	7
-	+	9	0
-
-> ~/Documents/siren/zuzhi/'
-	*	1498558625	0
-	"	1	0
 
 > ~/Downloads/日本地名大全集.scel
 	*	1498558315	0
