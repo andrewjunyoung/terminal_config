@@ -21,13 +21,11 @@ compinit
 ##
 # alias
 ##
-alias "cl"="clear; l"
+alias "c"="clear"
 alias "l"="ls -Ap"
-alias "list"="l"
 alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias "up"="cd .."
-alias "upl"="cd ..; l"
 
 ##
 # export
@@ -44,6 +42,9 @@ yy=~/Music
 export yy
 altair=~/Documents/biancheng/altair
 export altair
+public=~/Documents/public
+export public
+siren=~/Documents/siren
 
 ##
 # prompt
