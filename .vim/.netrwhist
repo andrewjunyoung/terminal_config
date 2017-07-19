@@ -1,6 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jun/Documents/yuyan/papers/component-matching-re/component-matching-re-for-hangeul-characters'
-let g:netrw_dirhist_2='/Users/jun/.vim'
-let g:netrw_dirhist_3='/Users/jun/Documents/biancheng/veritas/src/main'
-let g:netrw_dirhist_4='/Users/jun/Documents/biancheng/veritas/src'
+let g:netrw_dirhist_cnt =0
