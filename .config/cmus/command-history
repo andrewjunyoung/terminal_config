@@ -1,6 +1,8 @@
+set softvol=true
+set softvol=false
 q
+add Music/iTunes/iTunes Media/Music/
+clear
 add ./
 add ./CAloe Blacc/
-clear
-add Music/iTunes/iTunes Media/Music/
 add ../../../Music/iTunes/iTunes Media/Music/
