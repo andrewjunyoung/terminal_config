@@ -31,24 +31,18 @@ alias "up"="cd .."
 # export
 ##
 wg=~/Documents
-export wg
 xz=~/Downloads
-export xz
 tp=~/Pictures
-export tp
 bc=~/Documents/biancheng
-export bc
 yy=~/Music
-export yy
 altair=~/Documents/biancheng/altair
-export altair
 public=~/Documents/public
-export public
 siren=~/Documents/siren
+docsoc=~/Documents/daxue/docsoc
 
 ##
 # prompt
-#
+##
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
@@ -77,6 +71,11 @@ LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
 # stderr
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
+##
+# tmux
+##
+# Run on startup
+if [ "$TMUX" = "" ]; then tmux; fi
 
 ##
 # setopt and unsetopt configs
@@ -117,5 +116,36 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # source /Users/admin/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+##
 # zsh-syntax-highlighting
-source ./.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+##
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+##
+# day/night background
+##
+night() {
+    # macOS trick explained in readme
+    rm ~/Pictures/desktop/current/day.jpeg 2> /dev/null
+    cp ~/Pictures/desktop/night.jpeg ~/Pictures/desktop/current/night.jpeg
+}
+
+day() {
+    # macOS trick explained in readme
+    rm ~/Pictures/desktop/current/night.jpeg 2> /dev/null
+    cp ~/Pictures/desktop/day.jpeg ~/Pictures/desktop/current/day.jpeg
+}
+
+# Call this function at the end of .zshrc
+checkTime() {
+    h=`date +%H`
+    if [ $h -lt 06 ]
+    then
+        night
+    elif [ $h -lt 18 ]
+    then
+        day
+    else
+        night
+    fi
+}
