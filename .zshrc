@@ -22,6 +22,7 @@ compinit
 # alias
 ##
 alias "c"="clear"
+alias "g"="git"
 alias "l"="ls -Ap"
 alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
@@ -49,7 +50,7 @@ function prompt_char {
     echo '>'
 }
 
-PROMPT='[%B%h%b | %D %* | %F{yellow}%m%f.%F{green}%n%f | %B%U%2c%u%b]
+PROMPT='[%B%h%b | %D %* | %F{yellow}%m%f.%F{green}%n%f | %B%U%3c%u%b]
 > '
 TMOUT=1
 
