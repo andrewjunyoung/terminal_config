@@ -169,5 +169,41 @@ if [ "$TMUX" = "" ]; then tmux; fi
 ##
 #
 
+##
 # zsh-autosuggestions
+##
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+##
+# zsh-syntax-highlighting
+##
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+##
+# day/night background
+##
+night() {
+    # macOS trick explained in readme
+    rm ~/Pictures/desktop/current/day.jpeg 2> /dev/null
+    cp ~/Pictures/desktop/night.jpeg ~/Pictures/desktop/current/night.jpeg
+}
+
+day() {
+    # macOS trick explained in readme
+    rm ~/Pictures/desktop/current/night.jpeg 2> /dev/null
+    cp ~/Pictures/desktop/day.jpeg ~/Pictures/desktop/current/day.jpeg
+}
+
+# Call this function at the end of .zshrc
+checkTime() {
+    h=`date +%H`
+    if [ $h -lt 06 ]
+    then
+        night
+    elif [ $h -lt 18 ]
+    then
+        day
+    else
+        night
+    fi
+}
