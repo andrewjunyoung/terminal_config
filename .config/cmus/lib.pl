@@ -1,5 +1,3 @@
-/Users/jun/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/------ %2F ---.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Cowboy Bebop - The Real Folk Blues ending theme.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Schubert -Serenade-.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Verdi - La Traviata- Drinking Song (Libiamo ne' lieti calici) [HD].mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Cello Concerto No 1 A Minor.mp3
@@ -23,7 +21,6 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/-/Dizhen _ 地震/Christchurch Earthquake _ 基督城地震.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/-/Dizhen _ 地震/Haiti Earthquake _ 海地地震.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Aloe Blacc/Soul Mix/I Need A Dollar.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/BARENBOIM Daniel, DU PRE Jacqueline/Unknown Album/Cello Concerto.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Big Bad Voodoo Daddy/Americana Deluxe/01 The Boogie Bumper.m4a
 /Users/jun/Music/iTunes/iTunes Media/Music/Big Bad Voodoo Daddy/Americana Deluxe/02 Mr Pinstripe Suit.m4a
 /Users/jun/Music/iTunes/iTunes Media/Music/Big Bad Voodoo Daddy/Americana Deluxe/03 King Of Swing.m4a
@@ -47,10 +44,14 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/Bim Bam Boom/Tiger Roll/09 Shalala Shalala Let's Do The Monkey.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Black Pink/Black Pink/Boombayah.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Black Pink/Black Pink/Hwiparam.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/Bob Dylan- Knockin' on Heaven's Door -Original-.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/Girl from the North Country - Bob Dylan.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/House of the Risin' Sun.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/Mr Tambourine Man.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/Calvin Harris/Unknown Album/Calvin Harris - Acceptable in the 80's.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/Girl from the North Country.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Bob Dylan/Bob Dylan/Knockin' on Heaven's Door.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/BTS/Unknown Album/Jjeoreo.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Calvin Harris/Unknown Album/Acceptable in the 80's.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Daniel BARENBOIM, Jacqueline DU PRE/Unknown Album/Cello Concerto.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Daniela Andrade/Unknown Album/La Vie En Rose (English).mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/David Bowie/David Bowie/01 Space Oddity.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/David Bowie/David Bowie/02 The Man Who Sold The World.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/David Bowie/David Bowie/03 Life On Mars_.mp3
@@ -59,6 +60,7 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/David Bowie/David Bowie/06 Moonage Daydream.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/David Bowie/David Bowie/Ziggy Stardust.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Deng Lijun _ 邓丽君/Unknown Album/Kitaguni No Haru _ 北国之春.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Edith Piaf/Unknown Album/La Vie En Rose (Français).mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Eminem/Eminem__/Lose Yourself.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/EXO/Unknown Album/Monster.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Frédéric Chopin/Unknown Album/Raindrop Prelude, Op 28, No. 15.mp3
@@ -81,8 +83,8 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Asutoronoto _ アストロノート.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Ato 5 Fun' Dake _ あと５分だけ.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Gin' No Den'sya, Hai No Mati _ 銀の電車、灰の街.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Mayorunaka No Pa-tei- _ 真夜中のパーティー.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Nee _ ねぇ.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/Nekura _ 音昏/Dori'pu _ ドリップ_/Sin'yatyuu No Pa-tei- _ 真夜中のパーティー.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/1-01 Speak To Me.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/1-02 Breathe.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/1-03 On The Run.mp3
@@ -93,7 +95,11 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/2-03 Any Color You Like.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/2-04 Brain Damage.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Pink Floyd/Dark Side Of The Moon _ 月之暗面/2-05 Eclipse.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/REICH Steve/Electric Counterpoint/01 Electric Counterpoint, 1.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Shiitoberutsu _ シートベルツ/Cowboy Bebop _ カウボーイビバップ/Spokey Dokey.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Shiitoberutsu _ シートベルツ/Cowboy Bebop _ カウボーイビバップ/Tank!.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Shiitoberutsu _ シートベルツ/Cowboy Bebop _ カウボーイビバップ/The Real Folk Blues.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Shin Jia _ 申知儿/Unknown Album/Csárdás _ 沙尔达什.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Steve Reich/Electric Counterpoint/01 Electric Counterpoint, 1.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Steve Reich/Electric Counterpoint/03 Electric Counterpoint, 3.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/The 4 Seasons/Chameleon/Can't Take My Eyes Off You.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/The 4 Seasons/Chameleon/I've Got You Under My Skin _ 爱你已深爱入骨里.mp3
@@ -109,9 +115,9 @@
 /Users/jun/Music/iTunes/iTunes Media/Music/The 4 Seasons/Chameleon/04 The Girl I'll Never Know.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Tokyo 3 Jazz Club/The World! Evangelion Jazz Night/The World! Evangelion Jazz Night.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Uematu Noboue _ 植松伸夫/Final Fantasy X _ 最终幻想十/An'yaku _ 暗躍.mp3
+/Users/jun/Music/iTunes/iTunes Media/Music/Waga'ki Ban'do _ 和楽器バンド/Unknown Album/Sen'bon'zakura _ 千本樱.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Werner Thomas/Unknown Album/Les Larmes de Jacqueline.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Zico/夜店音乐/Bermuda Triangle.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Ziyue Yuedui _ 子曰乐队/Ziyue Yuedui _ 子曰乐队/Guaiguai De _ 乖乖的.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Ziyue Yuedui _ 子曰乐队/Ziyue Yuedui _ 子曰乐队/Xiangdui _ 相对.mp3
 /Users/jun/Music/iTunes/iTunes Media/Music/Ziyue Yuedui _ 子曰乐队/Ziyue Yuedui _ 子曰乐队/Yiyou _ 咿呦.mp3
-/Users/jun/Music/iTunes/iTunes Media/Music/申铉洙/Unknown Album/Csárdás _ 沙尔达什.mp3

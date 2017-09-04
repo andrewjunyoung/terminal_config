@@ -81,6 +81,8 @@ altair=~/Documents/biancheng/altair
 public=~/Documents/public
 siren=~/Documents/siren
 docsoc=~/Documents/daxue/docsoc
+tsg=~/Documents/cundang/tushuguan
+zuzhi=~/Documents/siren/zuzhi
 
 ##
 # prompt
