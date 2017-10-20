@@ -40,7 +40,9 @@ source $ZSH/oh-my-zsh.sh
 ###############################################################################
 #
 
-#   neofetch 
+##
+# neofetch 
+##
 command neofetch
 
 # hist lines configured by zsh-newuser-install
@@ -72,28 +74,33 @@ alias "up"="cd .."
 ##
 # export
 ##
-wg=~/Documents
-xz=~/Downloads
-tp=~/Pictures
-bc=~/Documents/biancheng
-yy=~/Music
-altair=~/Documents/biancheng/altair
+docs=~/Documents
+dl=~/Downloads
+pics=~/Pictures
+code=~/Documents/code
+altair=$code/altair
 public=~/Documents/public
 siren=~/Documents/siren
-docsoc=~/Documents/daxue/docsoc
-tsg=~/Documents/cundang/tushuguan
-zuzhi=~/Documents/siren/zuzhi
+ic=~/Documents/ic
+computing=$ic/computing
+lib=~/Documents/cundang/tushuguan
+zuzhi=$siren/zuzhi
+
+curr=~/Documents/ic/computing/compilers/
 
 ##
 # prompt
 ##
+
+# zsh-git-prompt
+source $code/sh/zsh-git-prompt/zshrc.sh
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     echo '>'
 }
 
-PROMPT='[%B%h%b | %F{yellow}%m%f.%F{green}%n%f | %D %* | %F{blue}%B%U%3c%u%b%f]
+PROMPT='[%B%h%b | %F{yellow}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f ]
 > '
 TMOUT=1
 
