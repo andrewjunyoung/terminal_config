@@ -93,7 +93,7 @@ curr=~/Documents/ic/computing/compilers/
 ##
 
 # zsh-git-prompt
-source $code/sh/zsh-git-prompt/zshrc.sh
+source .zsh/zsh-git-prompt/zshrc.sh
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
