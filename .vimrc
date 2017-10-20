@@ -1,5 +1,5 @@
 " vundle
-    set nocompatible              " be iMproved, required
+    set nocompatible              " be improved, required
     filetype off                  " required
     
     filetype plugin indent on
@@ -12,11 +12,8 @@
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " nerdtree
-    " open a nerdtree automatically when vim starts up
-    autocmd vimenter * NERDTree
-    " open a nerdtree automatically when vim starts up if no files were specified
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+   " close vim if the only window left open is a nerdtree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " pathogen
     execute pathogen#infect()
@@ -25,11 +22,11 @@
     set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
     
     if has("gui_running")
-               let s:uname = system("uname")
-                  if s:uname == "Darwin\n"
-                                set guifont=Meslo\ LG\ S\ for\ Powerline
-                                   endif
-                           endif
+        let s:uname = system("uname")
+        if s:uname == "Darwin\n"
+            set guifont=Meslo\ LG\ S\ for\ Powerline
+        endif
+    endif
     
     syntax on
 
@@ -37,6 +34,23 @@
     highlight ColorColumn ctermbg=235 guibg=#2c2d27
     let &colorcolumn=join(range(81,999),",")
     let &colorcolumn="80,".join(range(120,999),",")
+    
+" noremaps
+
+    " swap char with next
+        :nnoremap <silent> gc xph
+    " swap word with next
+        :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+    " push word left
+        :nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+    " push word right
+        :nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
+    " swap lines (Alt-j, Alt-k for up/down)
+        nnoremap <A-j> :m .+1<CR>==
+        nnoremap <A-k> :m .-2<CR>==
+
+
+
 
 " 'set'-commands (listed alphabetically)
     " B
@@ -64,7 +78,7 @@
     
     " R
         set ruler
-        set relativenumber
+        " set relativenumber
     
     " S
         set secure
