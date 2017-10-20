@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/jun/Documents/biancheng/altair/libs/c-hashtable/hashtable/spt_linkedlist'
 let g:netrw_dirhist_2='/Users/jun/Documents/biancheng/altair/libs/c-hashtable/hashtable'
 let g:netrw_dirhist_3='/Users/jun/Documents/biancheng/altair/libs/c-hashtable/hashtable/spt_linkedlist'
 let g:netrw_dirhist_4='/Users/jun/Documents/biancheng/altair/libs/c-hashtable/hashtable'
 let g:netrw_dirhist_5='/Users/jun/Documents/biancheng/altair/src/pull_request'
+let g:netrw_dirhist_6='/Users/jun'
+let g:netrw_dirhist_7='/Users/jun/Documents'
+let g:netrw_dirhist_8='/Users/jun/Documents/ic'
+let g:netrw_dirhist_9='/Users/jun/Documents/ic/japanese'
