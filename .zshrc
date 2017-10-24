@@ -86,7 +86,8 @@ computing=$ic/computing
 lib=~/Documents/cundang/tushuguan
 zuzhi=$siren/zuzhi
 
-curr=~/Documents/ic/computing/compilers/
+curr=~/Documents/ic/computing/compilers-221/
+wacc=~/Documents/ic/computing/wacc-261/wacc
 
 ##
 # prompt
@@ -100,7 +101,7 @@ function prompt_char {
     echo '>'
 }
 
-PROMPT='[%B%h%b | %F{yellow}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f ]
+PROMPT='[%B%h%b | %F{yellow}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
 > '
 TMOUT=1
 
