@@ -50,8 +50,9 @@
         nnoremap <A-j> :m .+1<CR>==
         nnoremap <A-k> :m .-2<CR>==
 
-
-
+    " jump by 10
+        :noremap K 10k
+        :noremap J 10j
 
 " 'set'-commands (listed alphabetically)
     " B
@@ -73,13 +74,16 @@
     
     " I
         set incsearch
+
+    " L
+        set laststatus=2
     
     " N
         set number
     
     " R
         set ruler
-        " set relativenumber
+        set relativenumber
     
     " S
         set secure
