@@ -87,7 +87,7 @@ computing=$ic/computing
 lib=~/Documents/cundang/tushuguan
 zuzhi=$siren/zuzhi
 
-curr=~/Documents/ic/computing/compilers-221/
+curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
 wacc=~/Documents/ic/computing/wacc-261/wacc
 
 ##
