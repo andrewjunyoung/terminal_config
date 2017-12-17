@@ -37,13 +37,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-###############################################################################
-#
+################################################################################
 
 ##
-# neofetch 
+# neofetch
 ##
-command neofetch
+#command neofetch
 
 # hist lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -70,7 +69,9 @@ alias "l"="ls -Ap"
 alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias "up"="cd .."
-alias "cl"="cd \"$@\" && ls;"
+alias "cl"="cd \"$@\" && l"
+
+alias "restart"="exec zsh"
 
 ##
 # export
@@ -81,11 +82,11 @@ pics=~/Pictures
 code=~/Documents/code
 altair=$code/altair
 public=~/Documents/public
-siren=~/Documents/siren
+private=~/Documents/private
 ic=~/Documents/ic
 computing=$ic/computing
-lib=~/Documents/cundang/tushuguan
-zuzhi=$siren/zuzhi
+lib=~/Documents/archive/lib
+zuzhi=$private/org
 
 curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
 wacc=~/Documents/ic/computing/wacc-261/wacc
