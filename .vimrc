@@ -56,6 +56,10 @@
     let &colorcolumn=join(range(81,999),",")
     let &colorcolumn="80,".join(range(120,999),",")
 
+" mouse properties
+    " mouse doesn't copy line numbers
+    :se mouse+=a
+
 " noremaps
 
     " swap char with next
@@ -80,7 +84,7 @@
 
     " C
         set cursorline
-        hi CursorLine term=bold cterm=bold ctermbg=235
+        hi CursorLine term=bold cterm=NONE ctermbg=235
 
         set cursorcolumn
         hi CursorColumn ctermbg=235
@@ -113,7 +117,8 @@
     " T
         set tabstop=4
 
-" Syntax highlighting
+" syntax highlighting
+    autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
 " tab to complete words
     function! Tab_Or_Complete()
