@@ -80,16 +80,16 @@ docs=~/Documents
 dl=~/Downloads
 pics=~/Pictures
 code=~/Documents/code
-altair=$code/altair
+scripts=~$code/scripts
 public=~/Documents/public
 private=~/Documents/private
 ic=~/Documents/ic
 computing=$ic/computing
 lib=~/Documents/archive/lib
-zuzhi=$private/org
+org=$private/org
 
 curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
-wacc=~/Documents/ic/computing/wacc-261/wacc
+pintos=~/Documents/ic/computing/labs-261/pintos/
 
 ##
 # prompt
@@ -127,7 +127,7 @@ exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 # tmux
 ##
 # Run on startup
-if [ "$TMUX" = "" ]; then tmux; fi
+# if [ "$TMUX" = "" ]; then tmux; fi
 
 ##
 # setopt and unsetopt configs
