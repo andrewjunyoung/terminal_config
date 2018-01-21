@@ -111,11 +111,11 @@
 
     " S
         set secure
-        set shiftwidth=4
-        set softtabstop=4
+        set shiftwidth=2
+        set softtabstop=2
 
     " T
-        set tabstop=4
+        set tabstop=2
 
 " syntax highlighting
     autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
