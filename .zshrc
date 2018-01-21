@@ -84,12 +84,13 @@ scripts=~$code/scripts
 public=~/Documents/public
 private=~/Documents/private
 ic=~/Documents/ic
-computing=$ic/computing
+cs=$ic/cs
+math=$ic/math
 lib=~/Documents/archive/lib
 org=$private/org
 
 curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
-pintos=~/Documents/ic/computing/labs-261/pintos/
+pintos=$cs/labs-261/pintos/
 
 ##
 # prompt
