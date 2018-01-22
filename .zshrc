@@ -89,7 +89,7 @@ lib=~/Documents/archive/lib
 org=$private/org
 
 curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
-pintos=$cs/labs-261/pintos/task-0
+pintos=$cs/labs-261/pintos/pintos
 
 ##
 # prompt
