@@ -1,5 +1,5 @@
-"       ██
-"      ░░
+"           ██
+"          ░░
 "  ██  ██ ██ ██████████  ██████  █████
 " ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
 " ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
@@ -19,6 +19,7 @@
 
   filetype plugin indent on
 
+
   " Change cursor shape
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -31,6 +32,10 @@
 
 " automatic comment insertion (disabled)
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" indentLine
+  let g:indentLine_setColors = 0
+  "let g:indentLine_setColors = 0
 
 " nerdtree
    " close vim if the only window left open is a nerdtree
@@ -49,18 +54,20 @@
     endif
   endif
 
-  syntax on
-
 " recolor background past right margin
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
   let &colorcolumn=join(range(81,999),",")
   let &colorcolumn="80,".join(range(120,999),",")
 
+" syntax highlighting, color scheme
+  :set syntax=rustyard
+  syntax on
+
 " mouse properties
   " mouse doesn't copy line numbers
   :se mouse+=a
 
-" noremaps
+" char maps
 
   " swap char with next
     :nnoremap <silent> gc xph
