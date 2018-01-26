@@ -103,7 +103,7 @@ function prompt_char {
     echo '>'
 }
 
-PROMPT='[%B%h%b | %F{yellow}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
+PROMPT='[%B%h%b | %F{cyan}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
 > '
 TMOUT=1
 
