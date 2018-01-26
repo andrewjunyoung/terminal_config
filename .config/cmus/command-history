@@ -1,6 +1,10 @@
 q
 add ~/Music/iTunes/iTunes Media/Music/
 clear
+j
+a
+e
+c
 set softvol=true
 set softvol=false
 add Music/iTunes/iTunes Media/Music/
