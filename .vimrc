@@ -34,8 +34,7 @@
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " indentLine
-  let g:indentLine_setColors = 0
-  "let g:indentLine_setColors = 0
+   let g:indentLine_color_term = 10
 
 " nerdtree
    " close vim if the only window left open is a nerdtree
@@ -128,6 +127,65 @@
     set tabstop=2
 
 " syntax highlighting
+  " TODO Move this to a new file
+    " #afffff (pale_turquoise_1)
+    hi Comment ctermfg=159
+    " #87af5f (Dark olive green)
+    hi String ctermfg=107
+    " #87af5f (Dark olive green)
+    hi Character ctermfg=107
+
+    " Green
+    hi Number ctermfg=48
+    "
+    hi Boolean ctermfg=Cyan
+    "
+    hi Float ctermfg=48
+    "
+
+	  hi Identifier	ctermfg=white
+	  hi Function	ctermfg=white
+
+    " ##ffd700 gold1
+    hi Statement ctermfg=179
+    " ##ffd700 gold1
+    hi Conditional ctermfg=202
+    " ##ffd700 gold1
+    hi Repeat ctermfg=179
+    " ##ffd700 gold1
+    hi Label ctermfg=179
+    "hi Operator	"sizeof", "+", "*", etc.
+    "hi Keyword	any other keyword
+    "hi Exception	try, catch, throw
+
+    hi PreProc ctermfg=166
+    "Include	preprocessor #include
+    "Define		preprocessor #define
+    "Macro		same as Define
+    "PreCondit	preprocessor #if, #else, #endif, etc.
+
+"	*Type		int, long, char, etc.
+"	 StorageClass	static, register, volatile, etc.
+"	 Structure	struct, union, enum, etc.
+"	 Typedef	A typedef
+
+"	*Special	any special symbol
+"	 SpecialChar	special character in a constant
+"	 Tag		you can use CTRL-] on this
+"	 Delimiter	character that needs attention
+"	 SpecialComment	special things inside a comment
+"	 Debug		debugging statements
+
+    "Underlined	text that stands out, HTML links
+
+"	*Ignore		left blank, hidden  |hl-Ignore|
+
+"	*Error		any erroneous construct
+
+    " #afffff (pale_turquoise_1)
+    hi Todo ctermfg=159
+
+  " Bracket highlighting
   autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
 " tab to complete words
