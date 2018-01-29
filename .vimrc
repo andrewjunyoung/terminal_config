@@ -128,17 +128,17 @@
 
 " syntax highlighting
   " TODO Move this to a new file
-    " #afffff (pale_turquoise_1)
+    " pale_turquoise_1 #afffff
     hi Comment ctermfg=159
-    " #87af5f (Dark olive green)
-    hi String ctermfg=107
-    " #87af5f (Dark olive green)
-    hi Character ctermfg=107
 
-    " Green
-    hi Number ctermfg=48
+    " dark olive green #87af5f
+    hi Character ctermfg=107
+    " dark olive green #87af5f
+    hi String ctermfg=119
+    " green
+    hi Number ctermfg=35
     "
-    hi Boolean ctermfg=Cyan
+    hi Boolean ctermfg=2
     "
     hi Float ctermfg=48
     "
@@ -146,44 +146,43 @@
 	  hi Identifier	ctermfg=white
 	  hi Function	ctermfg=white
 
-    " ##ffd700 gold1
+    " 130
     hi Statement ctermfg=179
     " ##ffd700 gold1
-    hi Conditional ctermfg=202
+    hi Conditional ctermfg=179
     " ##ffd700 gold1
-    hi Repeat ctermfg=179
+    hi Repeat ctermfg=202
     " ##ffd700 gold1
     hi Label ctermfg=179
-    "hi Operator	"sizeof", "+", "*", etc.
-    "hi Keyword	any other keyword
-    "hi Exception	try, catch, throw
+    "hi Operator "sizeof", "+", "*", etc.
+    "hi Keyword any other keyword
+    "red3	#d70000
+    hi Exception ctermfg=160
 
     hi PreProc ctermfg=166
     "Include	preprocessor #include
     "Define		preprocessor #define
-    "Macro		same as Define
     "PreCondit	preprocessor #if, #else, #endif, etc.
 
-"	*Type		int, long, char, etc.
-"	 StorageClass	static, register, volatile, etc.
-"	 Structure	struct, union, enum, etc.
-"	 Typedef	A typedef
+    hi Type ctermfg=166
+    "StorageClass	static, register, volatile, etc.
+    "Structure	struct, union, enum, etc.
+    "Typedef	A typedef
 
-"	*Special	any special symbol
-"	 SpecialChar	special character in a constant
-"	 Tag		you can use CTRL-] on this
-"	 Delimiter	character that needs attention
-"	 SpecialComment	special things inside a comment
-"	 Debug		debugging statements
+    "*Special	any special symbol
+    " SpecialChar	special character in a constant
+    " Tag		you can use CTRL-] on this
+    " Delimiter	character that needs attention
+    " SpecialComment	special things inside a comment
+    " Debug		debugging statements
 
     "Underlined	text that stands out, HTML links
 
-"	*Ignore		left blank, hidden  |hl-Ignore|
+    "*Ignore		left blank, hidden  |hl-Ignore|
+    hi Error ctermfg=124
 
-"	*Error		any erroneous construct
-
-    " #afffff (pale_turquoise_1)
-    hi Todo ctermfg=159
+    " 0 black #000000
+    hi Todo ctermfg=0
 
   " Bracket highlighting
   autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
