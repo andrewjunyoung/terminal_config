@@ -33,6 +33,9 @@
 " automatic comment insertion (disabled)
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" commands
+  :command Tree NERDTree
+
 " indentLine
    let g:indentLine_color_term = 10
 
@@ -184,8 +187,8 @@
     " 0 black #000000
     hi Todo ctermfg=0
 
-  " Bracket highlighting
-  autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
+    " Bracket highlighting
+    autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
 " tab to complete words
   function! Tab_Or_Complete()
