@@ -19,7 +19,6 @@
 
   filetype plugin indent on
 
-
   " Change cursor shape
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -29,9 +28,6 @@
 
   let g:airline_theme='angr'
   let g:airline#extensions#tabline#enabled = 1
-
-" automatic comment insertion (disabled)
-  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " commands
   :command Tree NERDTree
@@ -105,6 +101,9 @@
     set expandtab
     set exrc
 
+  " F
+    set formatoptions=r,q
+
   " H
     set hlsearch
 
@@ -128,6 +127,7 @@
 
   " T
     set tabstop=2
+    :set textwidth=79
 
 " syntax highlighting
   " TODO Move this to a new file
@@ -147,7 +147,8 @@
     "
 
 	  hi Identifier	ctermfg=white
-	  hi Function	ctermfg=white
+    " #eeeeee
+	  hi Function	ctermfg=255
 
     " 130
     hi Statement ctermfg=179
