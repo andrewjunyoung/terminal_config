@@ -61,6 +61,11 @@
   :set syntax=rustyard
   syntax on
 
+" latex auto compile
+autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
+autocmd BufReadPre,BufNewFile *.tex set spell
+autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
+
 " mouse properties
   " mouse doesn't copy line numbers
   :se mouse+=a
@@ -138,14 +143,14 @@
     hi Character ctermfg=107
     " dark olive green #87af5f
     hi String ctermfg=119
-    " green
+    " spring green 3
     hi Number ctermfg=35
-    "
+    " green
     hi Boolean ctermfg=2
-    "
+    " spring green 1
     hi Float ctermfg=48
-    "
 
+    "
 	  hi Identifier	ctermfg=white
     " #eeeeee
 	  hi Function	ctermfg=255
