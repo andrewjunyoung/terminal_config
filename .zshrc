@@ -39,30 +39,23 @@ source $ZSH/oh-my-zsh.sh
 
 ################################################################################
 
-##
-# neofetch
-##
-#command neofetch
-
 # hist lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=100000000
-SAVEHIST=100000000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory beep extendedglob nomatch
 bindkey -v
 # end of lines configured by zsh-newuser-install
-# the following lines were added by compinstall
 
 # theme
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 autoload -Uz compinit
 compinit
-# end of lines added by compinstall
 
-##
 # alias
-##
+
 alias "c"="clear"
 alias "g"="git"
 alias "l"="ls -Ap"
@@ -72,9 +65,8 @@ alias "up"="cd .."
 
 alias "restart"="exec zsh"
 
-##
 # export
-##
+
 docs=~/Documents
 dl=~/Downloads
 pics=~/Pictures
@@ -87,15 +79,12 @@ cs=$ic/cs
 math=$ic/math
 lib=~/Documents/archive/lib
 org=$private/org
+revision=$ic/revision
 
-curr=~/Documents/ic/computing/compilers-221/coursework/code-gen/
-pintos=$cs/labs-261/pintos/pintos/src
-
-##
 # prompt
-##
 
-# zsh-git-prompt
+## zsh-git-prompt
+
 source .zsh/zsh-git-prompt/zshrc.sh
 
 function prompt_char {
@@ -111,9 +100,8 @@ TRAPALRM() {
     zle reset-prompt
 }
 
-##
 # colors
-##
+
 # Set clicolor if you want ansi colors in iterm
 export CLICOLOR=1
 # set colors for iterm2
@@ -123,30 +111,26 @@ LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
 # stderr
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
-##
 # tmux
-##
+
 # Run on startup
 # if [ "$TMUX" = "" ]; then tmux; fi
 
+# rbenv (ruby environment)
 ##
-# setopt and unsetopt configs
-##
-#
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-##
 # zsh-autosuggestions
-##
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-##
 # zsh-syntax-highlighting
-##
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-##
 # day/night background
-##
+
 night() {
     # macOS trick explained in readme
     rm ~/Pictures/desktop/current/day.jpeg 2> /dev/null
@@ -157,18 +141,4 @@ day() {
     # macOS trick explained in readme
     rm ~/Pictures/desktop/current/night.jpeg 2> /dev/null
     cp ~/Pictures/desktop/day.jpeg ~/Pictures/desktop/current/day.jpeg
-}
-
-# Call this function at the end of .zshrc
-checkTime() {
-    h=`date +%H`
-    if [ $h -lt 06 ]
-    then
-        night
-    elif [ $h -lt 18 ]
-    then
-        day
-    else
-        night
-    fi
 }
