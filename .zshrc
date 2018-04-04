@@ -62,6 +62,7 @@ alias "l"="ls -Ap"
 alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias "up"="cd .."
+alias python=python3
 
 alias "restart"="exec zsh"
 
