@@ -7,11 +7,10 @@
 "   ░░██   ░██ ░██ ░██ ░██░░██   ░░█████
 "  ░░  ░░ ░░░  ░░  ░░ ░░░   ░░░░░
 "
-"  ▓▓▓▓▓▓▓▓▓▓
-" ░▓ author ▓ andrewjunyoung <andrewjunyoung@gmail.com>
-" ░▓ code   ▓ http://github.com/andrewjunyoung/terminalConfig
-" ░▓▓▓▓▓▓▓▓▓▓
-" ░░░░░░░░░░
+" ▓▓▓▓▓▓▓▓▓▓
+" ▓ author: andrewjunyoung <andrewjunyoung@gmail.com>
+" ▓ code: http://github.com/andrewjunyoung/terminalConfig
+" ▓▓▓▓▓▓▓▓▓▓
 
 " vundle
   set nocompatible        " be improved, required
@@ -25,12 +24,11 @@
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " airline
-
   let g:airline_theme='angr'
   let g:airline#extensions#tabline#enabled = 1
 
 " commands
-  :command Tree NERDTree
+  command Tree NERDTree
 
 " indentLine
    let g:indentLine_color_term = 10
@@ -58,7 +56,7 @@
   let &colorcolumn="80,".join(range(101,999),",")
 
 " syntax highlighting, color scheme
-  :set syntax=rustyard
+  set syntax=rustyard
   syntax on
 
 " latex auto compile
@@ -93,23 +91,35 @@ autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
 
 " 'set'-commands (listed alphabetically)
   " B
+    "
     set backspace=2
 
   " C
+    " Display the line the cursor is on in a different format.
     set cursorline
     hi CursorLine term=bold cterm=NONE ctermbg=235
 
+    " What you see is not what you get
+    set conceallevel=0
+    " For latex, enforce what you see is not what you get.
+    let g:tex_conceal=""
+
+    " Display the column the cursor is on in a different format.
     set cursorcolumn
     hi CursorColumn ctermbg=235
 
   " E
+    " Use spaces instead of tabs.
     set expandtab
+    "
     set exrc
 
   " F
-    set formatoptions=r,q
+    " Disable auto commenting for all files and sessions.
+    autocmd FileType * setlocal formatoptions-=cro
 
   " H
+    " Highlights all search results from a query.
     set hlsearch
 
   " I
@@ -119,10 +129,12 @@ autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
     set laststatus=2
 
   " N
+    " Display column numbers in the left margin.
     set number
 
   " R
     set ruler
+    " Use a relative numbering sstem for showing column numbers.
     set relativenumber
 
   " S
@@ -132,7 +144,8 @@ autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
 
   " T
     set tabstop=2
-    :set textwidth=79
+    " Display a line demarcating the n th character in a line.
+    set textwidth=79
 
 " syntax highlighting
   " TODO Move this to a new file
@@ -181,13 +194,7 @@ autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
     "*Special	any special symbol
     " SpecialChar	special character in a constant
     " Tag		you can use CTRL-] on this
-    " Delimiter	character that needs attention
-    " SpecialComment	special things inside a comment
-    " Debug		debugging statements
 
-    "Underlined	text that stands out, HTML links
-
-    "*Ignore		left blank, hidden  |hl-Ignore|
     hi Error ctermfg=124
 
     " 0 black #000000
