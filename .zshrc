@@ -76,11 +76,9 @@ scripts=~$code/scripts
 public=~/Documents/public
 private=~/Documents/private
 ic=~/Documents/ic
-cs=$ic/cs
-math=$ic/math
 lib=~/Documents/archive/lib
 org=$private/org
-revision=$ic/revision
+wa=$ic/web_apps/
 
 # prompt
 
