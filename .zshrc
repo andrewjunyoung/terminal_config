@@ -68,17 +68,21 @@ alias "restart"="exec zsh"
 
 # export
 
-docs=~/Documents
-dl=~/Downloads
-pics=~/Pictures
-code=~/Documents/code
-scripts=~$code/scripts
-public=~/Documents/public
-private=~/Documents/private
-ic=~/Documents/ic
-lib=~/Documents/archive/lib
-org=$private/org
+docs=~/Documents/
+dl=~/Downloads/
+pics=~/Pictures/
+code=~/Documents/code/
+scripts=$code/scripts/
+public=~/Documents/public/
+private=~/Documents/private/
+ic=~/Documents/ic/
+lib=~/Documents/archive/lib/
+org=$private/org/
 wa=$ic/web_apps/
+cerberus=$docs/cerberus/
+writing=$public/writing/
+
+# custom scripts
 
 # prompt
 

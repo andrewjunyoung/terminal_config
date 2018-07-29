@@ -62,7 +62,7 @@
 " latex auto compile
 autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
 autocmd BufReadPre,BufNewFile *.tex set spell
-autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
+autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
 
 " mouse properties
   " mouse doesn't copy line numbers
@@ -90,6 +90,10 @@ autocmd BufWritePost *.tex execute 'silent !pdflatex % > %:r.texoutput &'
     :noremap ty :let @/=""
 
 " 'set'-commands (listed alphabetically)
+  " A
+    "
+    set autoindent
+
   " B
     "
     set backspace=2
