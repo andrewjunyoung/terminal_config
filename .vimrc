@@ -1,6 +1,6 @@
 "           ██
 "          ░░
-"  ██  ██ ██ ██████████  ██████  █████
+" ░██     ██ ██████████  ██████  █████
 " ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
 " ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
 "  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
@@ -12,22 +12,33 @@
 " ▓ code: http://github.com/andrewjunyoung/terminalConfig
 " ▓▓▓▓▓▓▓▓▓▓
 
-" vundle
-  set nocompatible        " be improved, required
-  filetype off          " required
+"""" vundle """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-  filetype plugin indent on
+  set nocompatible              " be iMproved, required
+  filetype off                  " required
 
-  " Change cursor shape
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " alternatively, pass a path where Vundle should install plugins
+  call vundle#begin('~/.vim/bundle/vundle_list.vim')
+
+  " All Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
+
+"""" change cursor shape """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" airline
+"""" airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
   let g:airline_theme='angr'
   let g:airline#extensions#tabline#enabled = 1
 
-" commands
+"""" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   command Tree NERDTree
 
 " indentLine
@@ -37,10 +48,13 @@
    " close vim if the only window left open is a nerdtree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" pathogen
+"""" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+  " Todo: Is this still used?
   execute pathogen#infect()
 
-" powerline
+"""" Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
   set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
   if has("gui_running")
@@ -50,7 +64,8 @@
     endif
   endif
 
-" recolor background past right margin
+"""" recolor background past right margin """""""""""""""""""""""""""""""""""""
+
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
   let &colorcolumn=join(range(81,999),",")
   let &colorcolumn="80,".join(range(101,999),",")
@@ -59,7 +74,8 @@
   set syntax=rustyard
   syntax on
 
-" latex auto compile
+"""" latex auto compile """""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
 autocmd BufReadPre,BufNewFile *.tex set spell
 autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
@@ -89,7 +105,7 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
   " end highlighting
     :noremap ty :let @/=""
 
-" 'set'-commands (listed alphabetically)
+"""" settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " A
     "
     set autoindent
@@ -151,7 +167,7 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     " Display a line demarcating the n th character in a line.
     set textwidth=79
 
-" syntax highlighting
+"""" syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""""""
   " TODO Move this to a new file
     " pale_turquoise_1 #afffff
     hi Comment ctermfg=159
@@ -207,7 +223,8 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     " Bracket highlighting
     autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
-" tab to complete words
+"""" Tab to complete words """"""""""""""""""""""""""""""""""""""""""""""""""""
+
   function! Tab_Or_Complete()
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
       return "\<C-N>"
