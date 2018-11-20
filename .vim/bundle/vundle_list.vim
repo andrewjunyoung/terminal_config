@@ -2,3 +2,5 @@
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'ensime/ensime-vim'
+Plugin 'jalvesaq/Nvim-R'
+Plugin 'gaalcaras/ncm-R'
