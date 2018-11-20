@@ -81,6 +81,7 @@ org=$private/org/
 wa=$ic/web_apps/
 cerberus=$docs/cerberus/
 writing=$public/writing/
+me=$private/me/
 
 # custom scripts
 
@@ -118,11 +119,6 @@ exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
 # Run on startup
 # if [ "$TMUX" = "" ]; then tmux; fi
-
-# rbenv (ruby environment)
-##
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # zsh-autosuggestions
 
