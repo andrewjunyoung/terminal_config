@@ -169,9 +169,11 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
 
 """" syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""""""
   " TODO Move this to a new file
+    " BLUE
     " pale_turquoise_1 #afffff
     hi Comment ctermfg=159
 
+    " GREEN
     " dark olive green #87af5f
     hi Character ctermfg=107
     " dark olive green #87af5f
@@ -188,33 +190,41 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     " #eeeeee
 	  hi Function	ctermfg=255
 
-    " 130
+    " YELLOW-ORANGE-GOLD
+    " #d7af5f light goldenrod 3. Same as Keyword.
     hi Statement ctermfg=179
+    " #af875f light salmon 3. Same as PreProc PreCondit.
+    hi Conditional ctermfg=221
+    " #af8700 dark goldenrod
+    hi Repeat ctermfg=136
     " ##ffd700 gold1
-    hi Conditional ctermfg=179
-    " ##ffd700 gold1
-    hi Repeat ctermfg=202
-    " ##ffd700 gold1
-    hi Label ctermfg=179
-    "hi Operator "sizeof", "+", "*", etc.
-    "hi Keyword any other keyword
+    hi Label ctermfg=137
+    " #d7af5f light goldenrod 3. Same as Statement.
+    hi Keyword ctermfg=179
     "red3	#d70000
     hi Exception ctermfg=160
 
-    hi PreProc ctermfg=166
-    "Include	preprocessor #include
-    "Define		preprocessor #define
-    "PreCondit	preprocessor #if, #else, #endif, etc.
+    " ORANGE
+    " #d75f00 dark orange
+    hi PreProc ctermfg=202
+    hi Include ctermfg=202
+    " #d75f00 dark orange. Same as Type Typedef.
+    hi Define ctermfg=179
+    " #af875f light salmon 3. Same as Statement Conditional and Structure.
+    hi PreCondit ctermfg=221
 
-    hi Type ctermfg=166
-    "StorageClass	static, register, volatile, etc.
-    "Structure	struct, union, enum, etc.
-    "Typedef	A typedef
+    " ORANGE-BROWN
+    " #d75f00 dark orange
+    hi Type ctermfg=202
+    " #d75f00 dark orange. Same as Structure and PreProc Define.
+    hi Typedef ctermfg=179
+    " #d75f00 dark orange. Same as Typedef and PreProc Define.
+    hi Structure ctermfg=179
+    " #d75f00 dark orange
+    hi StorageClass	ctermfg=202
 
-    "*Special	any special symbol
-    " SpecialChar	special character in a constant
-    " Tag		you can use CTRL-] on this
-
+    " RED
+    " red3
     hi Error ctermfg=124
 
     " 0 black #000000
