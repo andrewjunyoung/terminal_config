@@ -19,19 +19,19 @@ set color_statusline_attr=default
 set color_statusline_bg=237
 set color_statusline_fg=white
 set color_titleline_attr=default
-set color_titleline_bg=233
-set color_titleline_fg=249
+set color_titleline_bg=235
+set color_titleline_fg=51
 set color_win_attr=default
 set color_win_bg=default
 set color_win_cur=lightyellow
 set color_win_cur_sel_attr=default
-set color_win_cur_sel_bg=233
-set color_win_cur_sel_fg=lightyellow
+set color_win_cur_sel_bg=237
+set color_win_cur_sel_fg=119
 set color_win_dir=lightblue
 set color_win_fg=lightyellow
 set color_win_inactive_cur_sel_attr=default
 set color_win_inactive_cur_sel_bg=237
-set color_win_inactive_cur_sel_fg=lightyellow
+set color_win_inactive_cur_sel_fg=119
 set color_win_inactive_sel_attr=default
 set color_win_inactive_sel_bg=235
 set color_win_inactive_sel_fg=119
@@ -87,7 +87,7 @@ set shuffle=true
 set skip_track_info=false
 set smart_artist_sort=true
 set softvol=true
-set softvol_state=60 60
+set softvol_state=97 100
 set status_display_program=
 set wrap_search=true
 bind browser backspace browser-up
@@ -168,7 +168,7 @@ bind common y win-add-p
 bind common z player-prev
 bind common { vol -1% -0
 bind common } vol -0 -1%
-fset 90s=date>=1990&date<2000
+fset 90s=date>=1990&date<2000j
 fset classical=genre="Classical"
 fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
 fset mp3=filename="*.mp3"
