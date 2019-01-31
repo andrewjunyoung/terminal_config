@@ -71,6 +71,7 @@ alias "restart"="exec zsh"
 docs=~/Documents/
 dl=~/Downloads/
 pics=~/Pictures/
+thesis=~/Documents/ic/thesis/
 code=~/Documents/code/
 scripts=$code/scripts/
 public=~/Documents/public/
@@ -85,6 +86,12 @@ me=$private/me/
 
 # custom scripts
 
+# functions
+
+function cl {
+  cd "$@" && l;
+}
+
 # prompt
 
 ## zsh-git-prompt
@@ -96,9 +103,11 @@ function prompt_char {
     echo '>'
 }
 
+# With seconds
+#PROMPT='[%B%h%b | %F{cyan}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
 PROMPT='[%B%h%b | %F{cyan}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
 > '
-TMOUT=1
+TMOUT=60
 
 TRAPALRM() {
     zle reset-prompt
@@ -141,3 +150,7 @@ day() {
     rm ~/Pictures/desktop/current/night.jpeg 2> /dev/null
     cp ~/Pictures/desktop/day.jpeg ~/Pictures/desktop/current/day.jpeg
 }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jun/.sdkman"
+[[ -s "/Users/jun/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jun/.sdkman/bin/sdkman-init.sh"
