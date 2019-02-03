@@ -168,6 +168,7 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     set textwidth=79
 
 """" syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
   " TODO Move this to a new file
     " BLUE
     " pale_turquoise_1 #afffff
