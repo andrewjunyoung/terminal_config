@@ -62,8 +62,8 @@ alias "l"="ls -Ap"
 alias "refresh"="clear; list"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias "up"="cd .."
-alias python=python3
-
+alias "python"="python3"
+alias "start"="open -a"
 alias "restart"="exec zsh"
 
 # export
@@ -154,3 +154,6 @@ day() {
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jun/.sdkman"
 [[ -s "/Users/jun/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jun/.sdkman/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
