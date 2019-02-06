@@ -1,5 +1,5 @@
 "           ██
-"          ░░
+"          a░
 " ░██     ██ ██████████  ██████  █████
 " ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
 " ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
@@ -13,20 +13,20 @@
 " ▓▓▓▓▓▓▓▓▓▓
 
 """" vundle """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  set nocompatible              " be iMproved, required
-  filetype off                  " required
-
-  " set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  " alternatively, pass a path where Vundle should install plugins
-  call vundle#begin('~/.vim/bundle/vundle_list.vim')
-
-  " All Plugins must be added before the following line
-  call vundle#end()            " required
-  filetype plugin indent on    " required
-
+"
+"  set nocompatible              " be iMproved, required
+"  filetype off                  " required
+"
+"  " set the runtime path to include Vundle and initialize
+"  set rtp+=~/.vim/bundle/Vundle.vim
+"  call vundle#begin()
+"  " alternatively, pass a path where Vundle should install plugins
+"  call vundle#begin('~/.vim/bundle/vundle_list.vim')
+"
+"  " All Plugins must be added before the following line
+"  call vundle#end()            " required
+"  filetype plugin indent on    " required
+"
 """" change cursor shape """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -39,20 +39,20 @@
   let g:airline#extensions#tabline#enabled = 1
 
 """" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  command Tree NERDTree
-
-" indentLine
-   let g:indentLine_color_term = 10
-
-" nerdtree
-   " close vim if the only window left open is a nerdtree
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+"  command Tree NERDTree
+"
+"" indentLine
+"   let g:indentLine_color_term = 10
+"
+"" nerdtree
+"   " close vim if the only window left open is a nerdtree
+"  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"
 """" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  " Todo: Is this still used?
-  execute pathogen#infect()
-
+"
+"  " Todo: Is this still used?
+"  execute pathogen#infect()
+"
 """" Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
@@ -80,11 +80,11 @@ autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &
 autocmd BufReadPre,BufNewFile *.tex set spell
 autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
 
-" mouse properties
-  " mouse doesn't copy line numbers
-  :se mouse+=a
-
-" char maps
+"" mouse properties
+"  " mouse doesn't copy line numbers
+"  :se mouse+=a
+"
+"" char maps
 
   " swap char with next
     :nnoremap <silent> gc xph
@@ -235,13 +235,13 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
 """" Tab to complete words """"""""""""""""""""""""""""""""""""""""""""""""""""
-
-  function! Tab_Or_Complete()
-    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-      return "\<C-N>"
-    else
-      return "\<Tab>"
-    endif
-  endfunction
-  :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-  :set dictionary="/usr/dict/words"
+"
+"  function! Tab_Or_Complete()
+"    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+"      return "\<C-N>"
+"    else
+"      return "\<Tab>"
+"    endif
+"  endfunction
+"  :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+"  :set dictionary="/usr/dict/words"
