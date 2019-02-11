@@ -5,6 +5,16 @@
 " | code: http://github.com/andrewjunyoung/terminalConfig |
 " +-------------------------------------------------------+
 
+"" Begin plug-vim """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Install plug-vim if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
 """" change cursor shape """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
