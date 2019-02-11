@@ -59,12 +59,14 @@ compinit
 alias "c"="clear"
 alias "g"="git"
 alias "l"="ls -Ap"
-alias "refresh"="clear; list"
-alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-alias "up"="cd .."
 alias "python"="python3"
-alias "start"="open -a"
+alias "refresh"="clear; list"
 alias "restart"="exec zsh"
+alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias "start"="open -a"
+alias "up"="cd .."
+alias "n"="nvim"
+alias "o"="open"
 
 # export
 
@@ -79,8 +81,6 @@ private=~/Documents/private/
 ic=~/Documents/ic/
 lib=~/Documents/archive/lib/
 org=$private/org/
-wa=$ic/web_apps/
-cerberus=$docs/cerberus/
 writing=$public/writing/
 me=$private/me/
 
