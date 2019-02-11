@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/jun/Documents/ic/computing/wacc-261/wacc/src/compiler/verif/types'
-let g:netrw_dirhist_2='/Users/jun/Documents/ic/computing/wacc-261/wacc/src'
-let g:netrw_dirhist_3='/Users/jun'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/jun/Documents/IC/algos'
+let g:netrw_dirhist_2='/Users/jun/Documents/IC/algos/CW1'
+let g:netrw_dirhist_3='/Users/jun/Documents/IC/algos/CW1/test'
+let g:netrw_dirhist_4='/Users/jun/.vim'
+let g:netrw_dirhist_5='/Users/jun/Documents/IC/algos/CW1/test'

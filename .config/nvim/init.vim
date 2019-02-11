@@ -14,19 +14,31 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+call plug#begin()
+" {
+
+Plug 'Yggdroot/indentLine'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'derekwyatt/vim-scala'
+Plug 'elixir-editors/vim-elixir'
+Plug 'ensime/ensime-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" }
+call plug#end()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
-"""" change cursor shape """"""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Begin vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let g:airline_theme='angr'
+let g:airline#extensions#tabline#enabled = 1
 
-"""" airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End vim-airline ""
+"" Begin NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-  let g:airline_theme='angr'
-  let g:airline#extensions#tabline#enabled = 1
-
-"""" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   command Tree NERDTree
 
 "" indentLine
@@ -35,8 +47,9 @@ endif
 "" nerdtree
    " close vim if the only window left open is a nerdtree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"
-"""" recolor background past right margin """""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End NERDTree ""
+"" Begin coloring """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
   let &colorcolumn=join(range(81,999),",")
@@ -46,20 +59,9 @@ endif
   set syntax=rustyard
   syntax on
 
-"""" latex auto compile """""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
+"" Begin char maps """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
-autocmd BufReadPre,BufNewFile *.tex set spell
-autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
-
-"" mouse properties
-  " mouse doesn't copy line numbers
-  :se mouse+=a
-
-"" char maps
-
-  " swap char with next
-    :nnoremap <silent> gc xph
   " swap word with next
     :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
   " push word left
@@ -77,69 +79,34 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
   " end highlighting
     :noremap ty :let @/=""
 
-"""" settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " A
-    "
-    set autoindent
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End char maps ""
+"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-  " B
-    "
-    set backspace=2
-
-  " C
-    " Display the line the cursor is on in a different format.
-    set cursorline
-    hi CursorLine term=bold cterm=NONE ctermbg=235
-
-    " What you see is not what you get
-    set conceallevel=0
-    " For latex, enforce what you see is not what you get.
-    let g:tex_conceal=""
-
-    " Display the column the cursor is on in a different format.
-    set cursorcolumn
-    hi CursorColumn ctermbg=235
-
-  " E
-    " Use spaces instead of tabs.
-    set expandtab
-    "
-    set exrc
-
-  " F
-    " Disable auto commenting for all files and sessions.
     autocmd FileType * setlocal formatoptions-=cro
-
-  " H
-    " Highlights all search results from a query.
+    hi CursorColumn ctermbg=235
+    hi CursorLine term=bold cterm=NONE ctermbg=235
+    let g:tex_conceal="" " For latex, enforce WYSINWYG.
+    set autoindent
+    set backspace=2
+    set conceallevel=0 " WYSINWYG.
+    set cursorcolumn
+    set cursorline
+    set expandtab
+    set exrc " Allow arbitrary code to executed in init.vim.
     set hlsearch
-
-  " I
     set incsearch
-
-  " L
     set laststatus=2
-
-  " N
-    " Display column numbers in the left margin.
     set number
-
-  " R
+    set relativenumber " Relative line numbers on the left of the page.
     set ruler
-    " Use a relative numbering sstem for showing column numbers.
-    set relativenumber
-
-  " S
     set secure
     set shiftwidth=2
     set softtabstop=2
+    set tabstop=2 " Tabs := 2 spaces.
+    set textwidth=79 " Display a line demarcating the n th character in a line.
 
-  " T
-    set tabstop=2
-    " Display a line demarcating the n th character in a line.
-    set textwidth=79
-
-"""" syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Begin syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""
 
   " TODO Move this to a new file
     " BLUE
@@ -206,14 +173,33 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
     " Bracket highlighting
     autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
 
-"""" Tab to complete words """"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax highlighting ""
+"" Begin misc """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-  function! Tab_Or_Complete()
-    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-      return "\<C-N>"
-    else
-      return "\<Tab>"
-    endif
-  endfunction
-  :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-  :set dictionary="/usr/dict/words"
+"Tab to complete words
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+:set dictionary="/usr/dict/words"
+
+
+" Auto compile latex on changes
+autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
+autocmd BufReadPre,BufNewFile *.tex set spell
+autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
+
+" mouse doesn't copy line numbers
+:se mouse+=a
+
+" Change the appearance of the cursor depending on the input mode.
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
+
