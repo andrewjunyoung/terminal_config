@@ -83,6 +83,8 @@ lib=~/Documents/archive/lib/
 org=$private/org/
 writing=$public/writing/
 me=$private/me/
+vim=~/.config/nvim/init.vim
+zsh=~/.zshrc
 
 # custom scripts
 
