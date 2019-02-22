@@ -78,12 +78,19 @@ code=~/Documents/code/
 scripts=$code/scripts/
 public=~/Documents/public/
 private=~/Documents/private/
-ic=~/Documents/ic/
+IC=~/Documents/IC/
 lib=~/Documents/archive/lib/
 org=$private/org/
 writing=$public/writing/
 me=$private/me/
+
+# Vim config file locations.
 vim=~/.config/nvim/init.vim
+mappings=~/.config/nvim/mappings.vim
+syntax=~/.config/nvim/syntax.vim
+settings=~/.config/nvim/settings.vim
+
+# Zsh config file locations.
 zsh=~/.zshrc
 
 # custom scripts
@@ -106,8 +113,7 @@ function prompt_char {
 }
 
 # With seconds
-#PROMPT='[%B%h%b | %F{cyan}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
-PROMPT='[%B%h%b | %F{cyan}%m%f.%F{green}%n%f | %D %* | $(git_super_status) | %F{blue}%B%U%3c%u%b%f]
+PROMPT='[%B%h%b | %F{202}%m%f.%F{35}%n%f | %D %* | $(git_super_status) | %F{159}%B%U%3c%u%b%f]
 > '
 TMOUT=60
 
@@ -126,11 +132,6 @@ LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
 # stderr
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
-# tmux
-
-# Run on startup
-# if [ "$TMUX" = "" ]; then tmux; fi
-
 # zsh-autosuggestions
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -138,20 +139,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh-syntax-highlighting
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# day/night background
-
-night() {
-    # macOS trick explained in readme
-    rm ~/Pictures/desktop/current/day.jpeg 2> /dev/null
-    cp ~/Pictures/desktop/night.jpeg ~/Pictures/desktop/current/night.jpeg
-}
-
-day() {
-    # macOS trick explained in readme
-    rm ~/Pictures/desktop/current/night.jpeg 2> /dev/null
-    cp ~/Pictures/desktop/day.jpeg ~/Pictures/desktop/current/day.jpeg
-}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jun/.sdkman"
