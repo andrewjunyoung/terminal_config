@@ -17,21 +17,36 @@ endif
 call plug#begin()
 " {
 
-Plug 'Yggdroot/indentLine'
-Plug 'bronson/vim-trailing-whitespace'
+"Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround' " Functions to surround text.
+Plug 'ntpeters/vim-better-whitespace' " (1B) Choose between this and (1A)
 Plug 'derekwyatt/vim-scala'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ensime/ensime-vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter' " Comment functions.
+Plug 'scrooloose/nerdtree' " Nerd tree directory navigation.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'SirVer/ultisnips' " Engine for python auto snippets.
+Plug 'honza/vim-snippets' " Python auto snippets.
 
 " }
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
+"" Python auto snippets """""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End auto snippets ##
 "" Begin vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline_theme='angr'
@@ -54,127 +69,13 @@ let g:airline#extensions#tabline#enabled = 1
 
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
   let &colorcolumn=join(range(81,999),",")
-  let &colorcolumn="80,".join(range(101,999),",")
+  let &colorcolumn="81,".join(range(101,999),",")
 
 " syntax highlighting, color scheme
   set syntax=rustyard
   syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
-"" Begin char maps """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  " swap word with next
-    :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
-  " push word left
-    :nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
-  " push word right
-    :nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
-  " swap lines (Alt-j, Alt-k for up/down)
-    nnoremap <A-j> :m .+1<CR>==
-    nnoremap <A-k> :m .-2<CR>==
-
-  " jump by 10
-    :noremap K 10k
-    :noremap J 10j
-
-  " end highlighting
-    :noremap ty :let @/=""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End char maps ""
-"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-    autocmd FileType * setlocal formatoptions-=cro
-    hi CursorColumn ctermbg=235
-    hi CursorLine term=bold cterm=NONE ctermbg=235
-    let g:tex_conceal="" " For latex, enforce WYSINWYG.
-    set autoindent
-    set backspace=2
-    set conceallevel=0 " WYSINWYG.
-    set cursorcolumn
-    set cursorline
-    set expandtab
-    set exrc " Allow arbitrary code to executed in init.vim.
-    set hlsearch
-    set incsearch
-    set laststatus=2
-    set number
-    set relativenumber " Relative line numbers on the left of the page.
-    set ruler
-    set secure
-    set shiftwidth=2
-    set softtabstop=2
-    set tabstop=2 " Tabs := 2 spaces.
-    set textwidth=79 " Display a line demarcating the n th character in a line.
-
-"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Begin syntax highlighting """"""""""""""""""""""""""""""""""""""""""""""""""
-
-  " pale_turquoise_1 #afffff
-  hi Comment ctermfg=244
-
-  " red3
-  hi Error ctermfg=124
-
-  " 0 black #000000
-  hi Todo ctermfg=0
-
-  " Bracket highlighting
-  autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=yellow
-
-
-
-  " GREEN
-  " dark olive green #87af5f
-  hi Character ctermfg=107
-  " dark olive green #87af5f
-  hi String ctermfg=119
-  " spring green 3
-  hi Number ctermfg=35
-  " green
-  hi Boolean ctermfg=2
-  " spring green 1
-  hi Float ctermfg=48
-
-  "
-  " 66
-  hi Identifier	ctermfg=73
-  " #eeeeee
-  hi Function	ctermfg=73
-
-  " YELLOW-ORANGE-GOLD
-  " #d7af5f light goldenrod 3. Same as Keyword.
-  hi Statement ctermfg=179
-  " #af875f light salmon 3. Same as PreProc PreCondit.
-  hi Conditional ctermfg=221
-  " #af8700 dark goldenrod
-  hi Repeat ctermfg=136
-  " ##ffd700 gold1
-  hi Label ctermfg=137
-  " #d7af5f light goldenrod 3. Same as Statement.
-  hi Keyword ctermfg=179
-  "red3	#d70000
-  hi Exception ctermfg=160
-
-  " ORANGE
-  " #d75f00 dark orange
-  hi PreProc ctermfg=202
-  hi Include ctermfg=202
-  " #d75f00 dark orange. Same as Type Typedef.
-  hi Define ctermfg=179
-  " #af875f light salmon 3. Same as Statement Conditional and Structure.
-  hi PreCondit ctermfg=221
-
-  " ORANGE-BROWN
-  " #d75f00 dark orange
-  hi Type ctermfg=202
-  " #d75f00 dark orange. Same as Structure and PreProc Define.
-  hi Typedef ctermfg=179
-  " #d75f00 dark orange. Same as Typedef and PreProc Define.
-  hi Structure ctermfg=179
-  " #d75f00 dark orange
-  hi StorageClass	ctermfg=202
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax highlighting ""
 "" Begin misc """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Tab to complete words
@@ -203,4 +104,24 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
+"" Begin mappings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if filereadable(expand("~/.config/nvim/mappings.vim"))
+  source ~/.config/nvim/mappings.vim
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End mappings ""
+"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if filereadable(expand("~/.config/nvim/mappings.vim"))
+  source ~/.config/nvim/settings.vim
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End settings ""
+"" Begin syntax """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if filereadable(expand("~/.config/nvim/mappings.vim"))
+  source ~/.config/nvim/syntax.vim
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax ""
