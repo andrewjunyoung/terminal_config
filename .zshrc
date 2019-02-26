@@ -68,6 +68,15 @@ alias "up"="cd .."
 alias "n"="nvim"
 alias "o"="open"
 
+# Git aliases
+
+alias "gst"="git status"
+alias "gp"="git push"
+alias "ga"="git add"
+alias "gl"="git pull"
+alias "gc"="git commit"
+alias "gd"="git diff"
+
 # export
 
 docs=~/Documents/
