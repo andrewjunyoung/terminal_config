@@ -6,11 +6,11 @@ filetype off
 
 autocmd FileType * setlocal formatoptions-=cro
 hi CursorColumn ctermbg=235
-hi CursorLine term=bold cterm=NONE ctermbg=235
-let g:tex_conceal="" " For latex, enforce WYSINWYG.
+hi CursorLine term=bold cterm=NONE ctermbg=235 " Highlight current line
+"let g:tex_conceal="" " For latex, enforce WYSINWYG.
 set autoindent
 set backspace=2
-set conceallevel=0 " WYSINWYG.
+"set conceallevel=0 " WYSINWYG.
 set cursorcolumn
 set cursorline
 set expandtab
