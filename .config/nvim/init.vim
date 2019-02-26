@@ -7,6 +7,8 @@
 
 "" Begin plug-vim """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible
+
 " Install plug-vim if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -17,7 +19,7 @@ endif
 call plug#begin()
 " {
 
-"Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround' " Functions to surround text.
 Plug 'ntpeters/vim-better-whitespace' " (1B) Choose between this and (1A)
 Plug 'derekwyatt/vim-scala'
@@ -29,7 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'mzlogin/vim-markdown-toc'
-Plug 'SirVer/ultisnips' " Engine for python auto snippets.
+"Plug 'SirVer/ultisnips' " Engine for python auto snippets.
 Plug 'honza/vim-snippets' " Python auto snippets.
 
 " }
@@ -38,13 +40,13 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
 "" Python auto snippets """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""" End auto snippets ##
 "" Begin vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,7 +60,8 @@ let g:airline#extensions#tabline#enabled = 1
   command Tree NERDTree
 
 "" indentLine
-   let g:indentLine_color_term = 10
+  let g:indentLine_char = '│'
+  let g:indentLine_color_term = 244 " 10
 
 "" nerdtree
    " close vim if the only window left open is a nerdtree
@@ -68,19 +71,21 @@ let g:airline#extensions#tabline#enabled = 1
 "" Begin coloring """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
-  let &colorcolumn=join(range(81,999),",")
-  let &colorcolumn="81,".join(range(101,999),",")
+  let &colorcolumn=join(range(81,81),",")
 
 " syntax highlighting, color scheme
   set syntax=rustyard
   syntax on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
-"" Begin misc """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
+"" Begin misc """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Tab to complete words
+" Tab to complete words
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+    return "\<C-N>"
+    return "\<C-N>"
     return "\<C-N>"
   else
     return "\<Tab>"
@@ -103,8 +108,8 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
-"" Begin mappings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
+"" Begin mappings """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if filereadable(expand("~/.config/nvim/mappings.vim"))
   source ~/.config/nvim/mappings.vim
@@ -124,4 +129,10 @@ if filereadable(expand("~/.config/nvim/mappings.vim"))
   source ~/.config/nvim/syntax.vim
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax ""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax ##
+
+hi GitGutterAdd    ctermfg=2
+hi GitGutterChange ctermfg=3
+hi GitGutterDelete ctermfg=1
+hi clear SignColumn
+
