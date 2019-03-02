@@ -1,5 +1,4 @@
-" +-------------------------------------------------------+
-" | .vimrc                                                |
+" +-------------------------------------------------------+ | .vimrc                                                |
 " +-------------------------------------------------------+
 " | author: andrewjunyoung <andrewjunyoung@gmail.com>     |
 " | code: http://github.com/andrewjunyoung/terminalConfig |
@@ -31,14 +30,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'mzlogin/vim-markdown-toc'
-"Plug 'SirVer/ultisnips' " Engine for python auto snippets.
+Plug 'SirVer/ultisnips' " Engine for python auto snippets.
 Plug 'honza/vim-snippets' " Python auto snippets.
+"Plug 'Valloric/YouCompleteMe' " Tab completion for programming languages
 
 " }
 call plug#end()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
-"" Python auto snippets """""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
+"" Python auto snippets """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 "let g:UltiSnipsExpandTrigger="<tab>"
@@ -80,7 +80,6 @@ let g:airline#extensions#tabline#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
 "" Begin misc """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Tab to complete words
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     return "\<C-N>"
@@ -93,7 +92,6 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
-
 
 " Auto compile latex on changes
 autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
@@ -108,6 +106,12 @@ autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" Git gutter
+hi GitGutterAdd    ctermfg=2
+hi GitGutterChange ctermfg=3
+hi GitGutterDelete ctermfg=1
+hi clear SignColumn
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
 "" Begin mappings """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -118,21 +122,16 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End mappings ""
 "" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if filereadable(expand("~/.config/nvim/mappings.vim"))
+if filereadable(expand("~/.config/nvim/settings.vim"))
   source ~/.config/nvim/settings.vim
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End settings ""
 "" Begin syntax """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if filereadable(expand("~/.config/nvim/mappings.vim"))
+if filereadable(expand("~/.config/nvim/syntax.vim"))
   source ~/.config/nvim/syntax.vim
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax ##
-
-hi GitGutterAdd    ctermfg=2
-hi GitGutterChange ctermfg=3
-hi GitGutterDelete ctermfg=1
-hi clear SignColumn
 

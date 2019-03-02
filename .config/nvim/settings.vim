@@ -1,31 +1,34 @@
-if &compatible
-  set nocompatible
+if &compatible set nocompatible
 end
 
-filetype off
+filetype off " Turn off filetype detection.
+
+" Indentline makes conceallevel > 2. So disable it for markdown files.
+autocmd FileType markdown let g:indentLine_enabled=0
 
 autocmd FileType * setlocal formatoptions-=cro
 hi CursorColumn ctermbg=235
 hi CursorLine term=bold cterm=NONE ctermbg=235 " Highlight current line
-"let g:tex_conceal="" " For latex, enforce WYSINWYG.
+let g:tex_conceal="" " For latex, enforce WYSINWYG.
 set autoindent
-set backspace=2
-"set conceallevel=0 " WYSINWYG.
-set cursorcolumn
-set cursorline
-set expandtab
+set backspace=2 " Make backspace work in vim.
+set conceallevel=0 " WYSINWYG. Prevent neovim from hiding symbols.
+set cursorcolumn " Highlight the current column.
+set cursorline " Highlight the current line.
+set expandtab " Make tab input spaces instead.
 set exrc " Allow arbitrary code to executed in init.vim.
 set hlsearch
 set clipboard=unnamed " MacOS clipboard sharing.
 set incsearch
 set laststatus=2
-set number
+set number " Precede each line with its line number.
 set relativenumber " Relative line numbers on the left of the page.
 set ruler
 set secure
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2 " Tabs := 2 spaces.
-set textwidth=79 " Display a line demarcating the n th character in a line.
+set textwidth=80 " Format text to 80 characters per line.
 
 filetype on
+
