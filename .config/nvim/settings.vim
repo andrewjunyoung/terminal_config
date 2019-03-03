@@ -1,4 +1,5 @@
-if &compatible set nocompatible
+if &compatible
+  set nocompatible
 end
 
 filetype off " Turn off filetype detection.

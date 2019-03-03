@@ -1,4 +1,5 @@
-" +-------------------------------------------------------+ | .vimrc                                                |
+" +-------------------------------------------------------+
+" | .vimrc                                                |
 " +-------------------------------------------------------+
 " | author: andrewjunyoung <andrewjunyoung@gmail.com>     |
 " | code: http://github.com/andrewjunyoung/terminalConfig |
@@ -30,12 +31,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'mzlogin/vim-markdown-toc'
-Plug 'SirVer/ultisnips' " Engine for python auto snippets.
-Plug 'honza/vim-snippets' " Python auto snippets.
-"Plug 'Valloric/YouCompleteMe' " Tab completion for programming languages
 
 " }
 call plug#end()
+
+" Possible future plugins to add:
+"Plug 'Valloric/YouCompleteMe' " Tab completion for programming languages. Testing.
+"Plug 'SirVer/ultisnips' " Engine for python auto snippets. Messes with tab autocomplete
+"Plug 'honza/vim-snippets' " Python auto snippets. Messes with tab autocomplete.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End plug-vim ""
 "" Python auto snippets """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -70,28 +73,25 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End NERDTree ""
 "" Begin coloring """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Mark line 81 in grey 235.
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
   let &colorcolumn=join(range(81,81),",")
 
-" syntax highlighting, color scheme
-  set syntax=rustyard
+" syntax highlighting on. TODO: needed?
   syntax on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End coloring ""
 "" Begin misc """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Tab to complete words.
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-    return "\<C-N>"
-    return "\<C-N>"
     return "\<C-N>"
   else
     return "\<Tab>"
   endif
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:set dictionary="/usr/dict/words"
 
 " Auto compile latex on changes
 autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
