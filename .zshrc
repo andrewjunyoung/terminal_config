@@ -92,6 +92,7 @@ lib=~/Documents/archive/lib/
 org=$private/org/
 writing=$public/writing/
 me=$private/me/
+todo=$me/org/todo.md
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
