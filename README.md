@@ -4,10 +4,10 @@ The design of my theme, rustyard, was designed from a principled perspective.
 In particular, the theme aims to be attentive to the following values, ordered
 roughly in order of importance.
 
-(1) Above all, it should look nice
-(2) It should use distinct but non-contrastive colors for different semantic
+1. Above all, it should look nice
+1. It should use distinct but non-contrastive colors for different semantic
 aspects of code (comments, control flow statements, values, etc)
-(3) Primitive types should aim to be distinct colors from higher level (HL)
+1. Primitive types should aim to be distinct colors from higher level (HL)
 types, while reflecting their origin.
 
 For point 3, we have taken this to use darker colors for more primitive types,
