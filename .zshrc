@@ -76,6 +76,7 @@ alias "ga"="git add"
 alias "gl"="git pull"
 alias "gc"="git commit"
 alias "gd"="git diff"
+alias "pdf"="o *.pdf"
 
 # export
 
