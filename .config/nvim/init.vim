@@ -1,9 +1,9 @@
-" +-------------------------------------------------------+
-" | .vimrc                                                |
-" +-------------------------------------------------------+
-" | author: andrewjunyoung <andrewjunyoung@gmail.com>     |
-" | code: http://github.com/andrewjunyoung/terminalConfig |
-" +-------------------------------------------------------+
+" +----------------------------------------------------------+
+" | .vimrc                                                   |
+" +----------------------------------------------------------+
+" | author : andrewjunyoung (andrewjunyoung1@gmail.com)      |
+" | code   : http://github.com/andrewjunyoung/terminalConfig |
+" +----------------------------------------------------------+
 
 "" Begin plug-vim """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -21,22 +21,24 @@ call plug#begin()
 
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround' " Functions to surround text.
-Plug 'ntpeters/vim-better-whitespace' " (1B) Choose between this and (1A)
+Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
 Plug 'derekwyatt/vim-scala'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ensime/ensime-vim'
-Plug 'scrooloose/nerdcommenter' " Comment functions.
-Plug 'scrooloose/nerdtree' " Nerd tree directory navigation.
+Plug 'scrooloose/nerdcommenter' " Better commenting tools.
+Plug 'scrooloose/nerdtree' " Directory navigation in vim.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'mzlogin/vim-markdown-toc'
+Plug 'airblade/vim-gitgutter' " Show git line changes on the left.
+Plug 'mzlogin/vim-markdown-toc' " Auto generates tables of contents in markdown.
+Plug 'dhruvasagar/vim-table-mode' " Fast commands for table editing.
+Plug 'morhetz/gruvbox' " Color theme
 
 " }
 call plug#end()
 
 " Possible future plugins to add:
-"Plug 'Valloric/YouCompleteMe' " Tab completion for programming languages. Testing.
+"Plug 'Valloric/YouCompleteMe' " Tab completion for programming languages.
 "Plug 'SirVer/ultisnips' " Engine for python auto snippets. Messes with tab autocomplete
 "Plug 'honza/vim-snippets' " Python auto snippets. Messes with tab autocomplete.
 
@@ -98,6 +100,11 @@ autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &
 autocmd BufReadPre,BufNewFile *.tex set spell
 autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
 
+
+autocmd BufReadPre,BufNewFile *.texexecute 'silent !evince %:r.pdf > /dev/null &'
+autocmd BufWritePost *.tex execute 'silent !xelatex % > %:r.texoutput &'
+
+
 " mouse doesn't copy line numbers
 :se mouse+=a
 
@@ -112,6 +119,17 @@ hi GitGutterChange ctermfg=3
 hi GitGutterDelete ctermfg=1
 hi clear SignColumn
 
+"" Begin gruvbox """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use gruvbox as your color scheme
+colorscheme gruvbox
+
+let g:gruvbox_italic = '1'
+let g:gruvbox_italicize_comments = '1'
+let g:gruvbox_contrast_dark = 'hard' " Must be one of {soft, medium, hard}.
+let g:gruvbox_contrast_light = 'hard' " Must be one of {soft, medium, hard}.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End gruvbox ""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
 "" Begin mappings """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

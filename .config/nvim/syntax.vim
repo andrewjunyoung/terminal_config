@@ -10,8 +10,6 @@ hi Comment ctermfg=244
 hi Error ctermfg=red
 " 0 black #000000
 hi Todo ctermfg=0
-" Bracket highlighting in 228 Khaki1 #ffff87
-autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=228
 
 " GREEN
 " 35 SpringGreen3 #00af5f
@@ -65,3 +63,7 @@ hi Structure ctermfg=yellow
 hi StorageClass ctermfg=202
 
 filetype on
+
+" At the end to overwrite prior syntax highlighting.
+" Bracket highlighting in 228 Khaki1 #ffff87.
+autocmd BufRead,BufNewFile * syn match parens /[(){}[]]/ | hi parens ctermfg=228

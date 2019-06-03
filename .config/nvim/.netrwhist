@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/jun/.vim'
 let g:netrw_dirhist_2='/Users/jun/.git'
 let g:netrw_dirhist_3='/Users/jun/Desktop'
+let g:netrw_dirhist_4='/Users/jun/Documents/IC/thesis/attack_repo/knock_knock_by_AJY/src/preproc'
