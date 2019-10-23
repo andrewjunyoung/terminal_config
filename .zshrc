@@ -78,22 +78,26 @@ alias "gc"="git commit"
 alias "gd"="git diff"
 alias "pdf"="o *.pdf"
 
+# Antlr
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.7.2-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
 # export
 
 docs=~/Documents/
 dl=~/Downloads/
 pics=~/Pictures/
-thesis=~/Documents/ic/thesis/
 code=~/Documents/code/
 scripts=$code/scripts/
 public=~/Documents/public/
 private=~/Documents/private/
-IC=~/Documents/IC/
 lib=~/Documents/archive/lib/
 org=$private/org/
 writing=$public/writing/
 me=$private/me/
 todo=$me/org/todo.md
+curr=$code/projects/symboard
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
@@ -126,7 +130,6 @@ function prompt_char {
 # With seconds
 PROMPT='[%B%h%b | %F{202}%m%f.%F{35}%n%f | %D %* | $(git_super_status) | %F{159}%B%U%3c%u%b%f]
 > '
-TMOUT=60
 
 TRAPALRM() {
     zle reset-prompt
