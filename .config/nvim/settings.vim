@@ -29,6 +29,7 @@ set secure
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2 " Tabs := 2 spaces.
+set tags=./tags,tags;$HOME
 set textwidth=80 " Format text to 80 characters per line.
 
 filetype on

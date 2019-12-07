@@ -89,7 +89,8 @@ docs=~/Documents/
 dl=~/Downloads/
 pics=~/Pictures/
 code=~/Documents/code/
-scripts=$code/scripts/
+rand=$code/scripts/rand
+lock=$code/scripts/lock
 public=~/Documents/public/
 private=~/Documents/private/
 lib=~/Documents/archive/lib/
@@ -97,7 +98,7 @@ org=$private/org/
 writing=$public/writing/
 me=$private/me/
 todo=$me/org/todo.md
-curr=$code/projects/symboard
+curr=$code/projects/symboard_project
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
