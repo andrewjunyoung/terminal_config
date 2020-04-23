@@ -9,9 +9,10 @@ Music/
 Pictures/
 Public/
 
-# Ignore for security reasons
+# Ignore history files and .ssh for security reasons
 .zsh_history
 .histfile
+.config/nvim/.netrwhist
 .ssh/
 
 # ZCompDump files are created by ZShell but can be safely removed.
