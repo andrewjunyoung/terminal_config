@@ -2,7 +2,7 @@
 export ZSH=/Users/jun/.oh-my-zsh
 
 # Name of the theme to load. See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ajy-zsh"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -33,7 +33,15 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
+plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+  git-prompt
+  jira
+)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +68,7 @@ alias "c"="clear"
 alias "g"="git"
 alias "l"="ls -Ap"
 alias "python"="python3"
+alias "pip"="pip3"
 alias "refresh"="clear; list"
 alias "restart"="exec zsh"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
@@ -85,20 +94,29 @@ alias grun='java org.antlr.v4.gui.TestRig'
 
 # export
 
-docs=~/Documents/
-dl=~/Downloads/
-pics=~/Pictures/
-code=~/Documents/code/
+music=~/Music/Music
+dl=~/Downloads
+docs=~/Documents
+
+# dynamic
+dynamic=$docs/dynamic
+scripts=$dynamic/scripts
 rand=$code/scripts/rand
 lock=$code/scripts/lock
-public=~/Documents/public/
-private=~/Documents/private/
-lib=~/Documents/archive/lib/
-org=$private/org/
-writing=$public/writing/
+# archive
+archive=$docs/archive
+pics=$archive/pics
+# static
+static=$docs/static
+publec=$static/public
+private=$static/private
 me=$private/me/
 todo=$me/org/todo.md
-curr=$code/projects/symboard_project
+# projects
+projects=$docs/projects
+code=$projects/code
+writing=$projects/writing
+symboard=$code/symboard
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
