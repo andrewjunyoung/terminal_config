@@ -81,6 +81,7 @@ alias "o"="open"
 
 alias "gst"="git status"
 alias "gp"="git push"
+alias "gsm"="git submodule"
 alias "ga"="git add"
 alias "gl"="git pull"
 alias "gc"="git commit"
