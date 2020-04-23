@@ -24,9 +24,6 @@ Plug 'cskeeters/vim-calutil' " Visual increment with calendar
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround' " Functions to surround text.
 Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
-Plug 'derekwyatt/vim-scala'
-Plug 'elixir-editors/vim-elixir'
-Plug 'ensime/ensime-vim'
 Plug 'scrooloose/nerdcommenter' " Better commenting tools.
 Plug 'scrooloose/nerdtree' " Directory navigation in vim.
 Plug 'vim-airline/vim-airline'
@@ -39,9 +36,8 @@ Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
 Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
 Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
-Plug 'vimwiki/vimwiki' " Vim wiki.
-
 Plug 'vim-syntastic/syntastic' " Linting tool for several programming languages.
+"Plug 'vimwiki/vimwiki' " Vim wiki.
 
 " TODO: Test
 Plug 'craigemery/vim-autotag'
