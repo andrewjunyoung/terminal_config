@@ -55,3 +55,6 @@
 [submodule ".config/nvim/plugged/indentLine"]
 	path = .config/nvim/plugged/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "ohmyzsh"]
+	path = ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh
