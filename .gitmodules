@@ -46,3 +46,12 @@
 [submodule ".config/nvim/plugged/vim-snippets"]
 	path = .config/nvim/plugged/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule ".config/nvim/plugged/vim-autotag"]
+	path = .config/nvim/plugged/vim-autotag
+	url = https://github.com/craigemery/vim-autotag.git
+[submodule ".config/nvim/plugged/syntastic"]
+	path = .config/nvim/plugged/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule ".config/nvim/plugged/indentLine"]
+	path = .config/nvim/plugged/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
