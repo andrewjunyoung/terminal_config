@@ -1,0 +1,48 @@
+[submodule ".config/nvim/plugged/VisIncr"]
+	path = .config/nvim/plugged/VisIncr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule ".config/nvim/plugged/YouCompleteMe"]
+	path = .config/nvim/plugged/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule ".config/nvim/plugged/gruvbox"]
+	path = .config/nvim/plugged/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule ".config/nvim/plugged/kotlin-vim"]
+	path = .config/nvim/plugged/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim.git
+[submodule ".config/nvim/plugged/nerdcommenter"]
+	path = .config/nvim/plugged/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".config/nvim/plugged/nerdtree"]
+	path = .config/nvim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".config/nvim/plugged/vim-airline-themes"]
+	path = .config/nvim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule ".config/nvim/plugged/vim-airline"]
+	path = .config/nvim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".config/nvim/plugged/vim-better-whitespace"]
+	path = .config/nvim/plugged/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule ".config/nvim/plugged/vim-markdown-toc"]
+	path = .config/nvim/plugged/vim-markdown-toc
+	url = https://github.com/mzlogin/vim-markdown-toc.git
+[submodule ".config/nvim/plugged/vim-table-mode"]
+	path = .config/nvim/plugged/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule ".config/nvim/plugged/vim-calutil"]
+	path = .config/nvim/plugged/vim-calutil
+	url = https://github.com/cskeeters/vim-calutil.git
+[submodule ".config/nvim/plugged/vim-surround"]
+	path = .config/nvim/plugged/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".config/nvim/plugged/vim-gitgutter"]
+	path = .config/nvim/plugged/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".config/nvim/plugged/ultisnips"]
+	path = .config/nvim/plugged/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule ".config/nvim/plugged/vim-snippets"]
+	path = .config/nvim/plugged/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
