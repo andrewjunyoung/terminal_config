@@ -93,7 +93,7 @@ archive=$docs/archive
 pics=$archive/pics
 # static
 static=$docs/static
-publec=$static/public
+public=$static/public
 private=$static/private
 me=$private/me/
 todo=$me/org/todo.md
@@ -121,11 +121,24 @@ function cl {
 
 # Prompt
 
-## zsh-git-prompt
-
+RPROMPT='' # Don't show anything to the right of the prompt.
 PROMPT='[%B%h%b | %F{202}%m%f.%F{35}%n%f | %D %* | $(git_super_status) | %F{159}%B%U%3c%u%b%f]
 > '
 
+## zsh-git-prompt
+ZSH_THEME_GIT_PROMPT_AHEAD="%{ʌ%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{v%G%}"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{chg:%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{clean%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{x%G%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{stg:%G%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{!trk%G%}"
+
+# No idea what this does.
 TRAPALRM() {
     zle reset-prompt
 }
