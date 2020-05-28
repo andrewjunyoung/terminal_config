@@ -30,6 +30,7 @@ plugins=(
   git-prompt
   jira
   colored-man-pages
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -58,6 +59,7 @@ alias "l"="ls -Ap"
 alias "n"="nvim"
 alias "o"="open"
 alias "up"="cd .."
+alias "up2"="cd ../.."
 alias "python"="python3"
 alias "pip"="pip3"
 alias "refresh"="clear; list"
@@ -66,6 +68,7 @@ alias "restart"="exec zsh"
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 # Useful with latex compilation.
 alias "pdf"="o *.pdf"
+alias "lock"="source \$scripts/lock"
 
 # Git aliases
 
@@ -76,6 +79,8 @@ alias "ga"="git add"
 alias "gl"="git pull"
 alias "gc"="git commit"
 alias "gd"="git diff"
+alias "gco"="git checkout"
+alias "gpsu"="git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin"
 
 # Exports
 
@@ -160,3 +165,9 @@ export SDKMAN_DIR="/Users/jun/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Autojump
+
+[[ -s /Users/jun/.autojump/etc/profile.d/autojump.sh ]] && source /Users/jun/.autojump/etc/profile.d/autojump.sh
+
+	autoload -U compinit && compinit -u

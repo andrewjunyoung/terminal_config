@@ -36,8 +36,8 @@ Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
 Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
 Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
-Plug 'vim-syntastic/syntastic' " Linting tool for several programming languages.
-"Plug 'vimwiki/vimwiki' " Vim wiki.
+"Plug 'vim-syntastic/syntastic' " Linting tool for several programming languages.
+Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
 
 " TODO: Test
 Plug 'craigemery/vim-autotag'
@@ -156,7 +156,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " List of linters.
-let g:syntastic_python_checkers = ['python', 'pylint', 'mypy']
+let g:syntastic_python_checkers = [] "['python', 'pylint', 'mypy']
 let g:syntastic_python_pylint_args = "-d missing-docstring,invalid-name"
 let g:syntastic_python_mypy_args = "--ignore-missing-imports"
 let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
