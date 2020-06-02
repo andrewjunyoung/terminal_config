@@ -53,13 +53,16 @@ compinit
 
 # Aliases
 
+function cd_up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+
 alias "c"="clear"
 alias "g"="git"
 alias "l"="ls -Ap"
 alias "n"="nvim"
 alias "o"="open"
-alias "up"="cd .."
-alias "up2"="cd ../.."
+alias "up"='cd_up'
 alias "python"="python3"
 alias "pip"="pip3"
 alias "refresh"="clear; list"
