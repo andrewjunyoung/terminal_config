@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jun/.oh-my-zsh
+export ZSH=/Users/ajy/.oh-my-zsh
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -24,8 +24,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+  zsh-autosuggestions  #zsh-users/zsh-autosuggestions/
+  zsh-syntax-highlighting  #zsh-users/zsh-users/zsh-syntax-highlighting
   history-substring-search
   git-prompt
   jira
@@ -163,14 +163,14 @@ LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jun/.sdkman"
-[[ -s "/Users/jun/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jun/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/ajy/.sdkman"
+[[ -s "/Users/ajy/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ajy/.sdkman/bin/sdkman-init.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Autojump
 
-[[ -s /Users/jun/.autojump/etc/profile.d/autojump.sh ]] && source /Users/jun/.autojump/etc/profile.d/autojump.sh
+[[ -s /Users/ajy/.autojump/etc/profile.d/autojump.sh ]] && source /Users/ajy/.autojump/etc/profile.d/autojump.sh
 
 	autoload -U compinit && compinit -u
