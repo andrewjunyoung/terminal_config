@@ -9,6 +9,9 @@ Music/
 Pictures/
 Public/
 
+# I hate these
+.DS_Store
+
 # Ignore history files and .ssh for security reasons
 .zsh_history
 .histfile
