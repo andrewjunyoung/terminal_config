@@ -1,0 +1,1 @@
+/Users/ajy/.fig/shell/pre.fish

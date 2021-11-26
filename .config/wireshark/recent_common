@@ -1,6 +1,7 @@
-# Recent settings file for Wireshark 3.0.0.
+# Common recent settings file for Wireshark 3.4.0.
 #
-# This file is regenerated each time Wireshark is quit.
+# This file is regenerated each time Wireshark is quit
+# and when changing configuration profile.
 # So be careful, if you want to make manual changes here.
 
 ######## Recent capture files (latest last), cannot be altered through command line ########
@@ -23,6 +24,10 @@ gui.geometry_main_height: 968
 # TRUE or FALSE (case-insensitive).
 gui.geometry_main_maximized: FALSE
 
+# Leftalign Action Buttons.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_leftalign_actions: FALSE
+
 # Statusbar left pane size.
 # Decimal number.
 gui.geometry_status_pane: 250
@@ -42,9 +47,25 @@ gui.geometry_status_wlan_stats_pane: 200
 # TRUE or FALSE (case-insensitive).
 privs.warn_if_elevated: TRUE
 
-# Warn if npf.sys isn't loaded on Windows >= 6.0.
+# Warn if Wireshark is unable to capture.
 # TRUE or FALSE (case-insensitive).
-privs.warn_if_no_npf: TRUE
+sys.warn_if_no_capture: TRUE
+
+# Find packet search in.
+# One of: PACKET_LIST, PACKET_DETAILS, PACKET_BYTES
+gui.search_in: PACKET_LIST
+
+# Find packet character set.
+# One of: NARROW_AND_WIDE, NARROW, WIDE
+gui.search_char_set: NARROW_AND_WIDE
+
+# Find packet case sensitive search.
+# TRUE or FALSE (case-insensitive).
+gui.search_case_sensitive: FALSE
+
+# Find packet search type.
+# One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
+gui.search_type: DISPLAY_FILTER
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.

@@ -1,3 +1,6 @@
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ajy/.oh-my-zsh
 
@@ -102,14 +105,21 @@ pics=$archive/pics
 # static
 static=$docs/static
 public=$static/public
-private=$static/private
-me=$private/me/
+me=$static/me/
 todo=$me/org/todo.md
+work=$docs/work
 # projects
-projects=$docs/projects
+projects=$work/projects
 code=$projects/code
-writing=$projects/writing
-symboard=$code/symboard
+writing=$work/writing
+EF=$work/employers/EF
+instant=$work/employers/get_instant
+IOS=$instant/product/IOS/
+
+carl=167.99.186.102
+carol=137.184.168.142
+candace=147.182.150.113
+prod=$candace
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
@@ -174,3 +184,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s /Users/ajy/.autojump/etc/profile.d/autojump.sh ]] && source /Users/ajy/.autojump/etc/profile.d/autojump.sh
 
 	autoload -U compinit && compinit -u
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
