@@ -56,25 +56,28 @@ compinit
 
 # Aliases
 
-function cd_up() {
+function up() {
   cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+
+function screenie() {
+  screencapture -o -l $(osascript -e 'tell app "iTerm" to id of window 1') $2
 }
 
 alias "c"="clear"
 alias "g"="git"
 alias "l"="ls -Ap"
+alias "lock"="source \$scripts/lock"
 alias "n"="nvim"
 alias "o"="open"
-alias "up"='cd_up'
-alias "python"="python3"
 alias "pip"="pip3"
+alias "python"="python3"
 alias "refresh"="clear; list"
 alias "restart"="exec zsh"
 # An alternative to «tree» if your shell doesn't have it set up.
 alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 # Useful with latex compilation.
 alias "pdf"="o *.pdf"
-alias "lock"="source \$scripts/lock"
 
 # Git aliases
 
@@ -119,6 +122,8 @@ IOS=$instant/product/IOS/
 carl=167.99.186.102
 carol=137.184.168.142
 candace=147.182.150.113
+camil=178.128.232.3
+cato=147.182.146.123
 prod=$candace
 
 # Vim config file locations.
