@@ -67,7 +67,8 @@ function screenie() {
 
 alias "c"="clear"
 alias "g"="git"
-alias "l"="ls -ApG --color=auto"
+alias "l"="ls -ApG --color=auto" # With dotfiles
+alias "la"="ls -pG --color=auto" # Without dotfiles
 alias "lock"="source \$scripts/lock"
 alias "n"="nvim"
 alias "o"="open"

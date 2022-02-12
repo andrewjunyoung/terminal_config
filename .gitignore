@@ -1,8 +1,10 @@
 # Ignore common directories
 .Trash/
+Applications/
 Desktop/
 Documents/
 Downloads/
+iCloud\ Drive\ \(Archive\)/
 Library/
 Movies/
 Music/
@@ -17,6 +19,30 @@ Public/
 .histfile
 .config/nvim/.netrwhist
 .ssh/
+
+# Programming langs; frameworks
+## AWS
+.amplify/
+.aws/
+## Android
+.android/
+## JS
+.npm/
+.config/gatsby/sites/
+.yarnrc
+## Kotlin
+.kotlinc_history
+## MongoDB
+.embedmongo/
+.mongorc.js
+## Python
+.python_history
+## Swift
+.cocoapods/
+
+# Vim / terminal files
+.mapscii/  # That ASCII map plugin for terminal
+.NERDTreeBookmarks
 
 # ZCompDump files are created by ZShell but can be safely removed.
 .zcompdump*
