@@ -50,6 +50,7 @@ bindkey -v
 # Theme. See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
+LSCOLORS="gxfxcxdxbxegedabagacad"
 
 autoload -Uz compinit
 compinit
@@ -66,12 +67,13 @@ function screenie() {
 
 alias "c"="clear"
 alias "g"="git"
-alias "l"="ls -Ap"
+alias "l"="ls -ApG --color=auto"
 alias "lock"="source \$scripts/lock"
 alias "n"="nvim"
 alias "o"="open"
 alias "pip"="pip3"
 alias "python"="python3"
+alias "rds"="rm .DS_Store"
 alias "refresh"="clear; list"
 alias "restart"="exec zsh"
 # An alternative to «tree» if your shell doesn't have it set up.
@@ -172,8 +174,6 @@ TRAPALRM() {
 export CLICOLOR=1
 # set colors for iterm2
 export TERM=xterm-256color
-# ls colors
-LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
 # stderr
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
