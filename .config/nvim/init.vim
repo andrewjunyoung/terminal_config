@@ -36,7 +36,6 @@ Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
 Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
 Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
-"Plug 'vim-syntastic/syntastic' " Linting tool for several programming languages.
 Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
 
 " TODO: Test
