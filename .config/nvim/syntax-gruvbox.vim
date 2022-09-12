@@ -4,7 +4,7 @@ end
 
 filetype off
 
-" 244 Grey50 #808080 
+" 244 Grey50 #808080
 hi Comment ctermfg=244
 " 124 Red3 #af0000
 hi Error ctermfg=124

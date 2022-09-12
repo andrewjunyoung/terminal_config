@@ -66,6 +66,7 @@ function screenie() {
 }
 
 alias "c"="clear"
+alias "d"="du -hd 3 | sort -rh | awk '{print NR "\t" $0}'"
 alias "g"="git"
 alias "l"="ls -ApG --color=auto" # With dotfiles
 alias "la"="ls -pG --color=auto" # Without dotfiles

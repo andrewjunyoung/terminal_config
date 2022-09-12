@@ -30,7 +30,11 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2 " Tabs := 2 spaces.
 set tags=./tags,tags;$HOME
-set textwidth=80 " Format text to 80 characters per line.
+
+" Set the textwidth to wrap, unless the file is one of the specified types.
+set textwidth=80
+autocmd BufNew,BufRead *.txt  set textwidth=0
+autocmd BufNew,BufRead *.wiki set textwidth=0
+autocmd BufNew,BufRead *.md   set textwidth=0
 
 filetype on
-
