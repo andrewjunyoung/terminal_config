@@ -101,6 +101,8 @@ music=~/Music/Music
 dl=~/Downloads
 docs=~/Documents
 
+# github
+github=$docs/github
 # dynamic
 dynamic=$docs/dynamic
 scripts=$dynamic/scripts
