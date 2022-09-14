@@ -81,3 +81,27 @@ Public/
 # VSCode
 .vscode/
 
+####
+# Other
+####
+.emulator_console_auth_token
+.ghc/
+.gradle/
+.lesshst
+.m2/
+.mapscii/
+.matplotlib/
+.mume/
+.oh-my-zsh/
+.profile
+.swiftpm/
+.synamedia/
+.vim/
+.viminfo
+.zcompcache/
+.zcompdump
+.zcompdump-Athabaska-5.7.1
+.zcompdump-Athabaska-5.8
+.zcompdump-Athabaska-5.8.1
+.zsh_sessions/
+VirtualBox VMs/
