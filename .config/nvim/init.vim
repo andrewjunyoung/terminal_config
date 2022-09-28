@@ -21,6 +21,7 @@ call plug#begin()
 
 Plug 'vim-scripts/VisIncr' " Visual increment
 Plug 'cskeeters/vim-calutil' " Visual increment with calendar
+Plug 'christoomey/vim-titlecase' " Capitalize only the first letter of words.
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround' " Functions to surround text.
 Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
