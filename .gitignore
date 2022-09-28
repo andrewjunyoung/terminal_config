@@ -39,6 +39,7 @@ Public/
 ## Cmus
 # Many cmus files are useless / metadata (but others are important for config).
 .config/cmus/cache
+.config/karabiner/automatic_backups/
 .config/cmus/command-history
 .config/cmus/lib.pl
 .config/cmus/search-history
