@@ -5,6 +5,8 @@
 " | code   : http://github.com/andrewjunyoung/terminalConfig |
 " +----------------------------------------------------------+
 
+let mapleader = ","
+
 "" Begin plug-vim """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
@@ -19,29 +21,26 @@ endif
 call plug#begin()
 " {
 
-Plug 'vim-scripts/VisIncr' " Visual increment
-Plug 'cskeeters/vim-calutil' " Visual increment with calendar
-Plug 'christoomey/vim-titlecase' " Capitalize only the first letter of words.
+Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
 Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-surround' " Functions to surround text.
+Plug 'airblade/vim-gitgutter' " Show git line changes on the left.
+Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
+Plug 'christoomey/vim-titlecase' " Capitalize only the first letter of words.
+Plug 'cskeeters/vim-calutil' " Visual increment with calendar
+Plug 'dhruvasagar/vim-table-mode' " Fast commands for table editing.
+Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
+Plug 'morhetz/gruvbox' " Color theme.
+Plug 'mzlogin/vim-markdown-toc' " Auto generates tables of contents in markdown.
 Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
-Plug 'scrooloose/nerdcommenter' " Better commenting tools.
 Plug 'scrooloose/nerdtree' " Directory navigation in vim.
+Plug 'tpope/vim-commentary' " Better commenting tools.
+Plug 'tpope/vim-fugitive' " Git plugins for vim.
+Plug 'tpope/vim-surround' " Functions to surround text.
+Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter' " Show git line changes on the left.
-Plug 'mzlogin/vim-markdown-toc' " Auto generates tables of contents in markdown.
-Plug 'dhruvasagar/vim-table-mode' " Fast commands for table editing.
-Plug 'morhetz/gruvbox' " Color theme.
-Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
+Plug 'vim-scripts/VisIncr' " Visual increment
 Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
-Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
-Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
-Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
-
-" TODO: Test
-Plug 'craigemery/vim-autotag'
-
 " }
 call plug#end()
 
