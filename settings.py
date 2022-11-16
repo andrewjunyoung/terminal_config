@@ -8,8 +8,9 @@ OUTPUT_DIR = os.getenv('OUTPUT_DIR')
 INSTANCE = os.getenv('INSTANCE')
 CLASS = os.getenv('CLASS')
 
-# You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
 data_dir = "/content/data/"
+
+# You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
 concepts_list = [
     {
         "instance_prompt":      f"photo of {INSTANCE} {CLASS}",
@@ -20,6 +21,8 @@ concepts_list = [
     # Can be more than one.
 ]
 
+print(concepts_list)
+
 # `class_data_dir` contains regularization images
 import json
 import os
@@ -28,3 +31,7 @@ for c in concepts_list:
 
 with open("concepts_list.json", "w") as f:
     json.dump(concepts_list, f, indent=4)
+
+# Try to clone instance images from S3
+
+
