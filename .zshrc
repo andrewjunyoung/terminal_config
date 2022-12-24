@@ -1,6 +1,3 @@
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ajy/.oh-my-zsh
 
@@ -111,26 +108,17 @@ lock=$code/scripts/lock
 # archive
 archive=$docs/archive
 pics=$archive/pics
+aia=$pics/art/AI
 # static
 static=$docs/static
-public=$static/public
-me=$static/me/
+me=$docs/local/me
 todo=$me/org/todo.md
-work=$docs/work
+work=$me/work
 # projects
+github=$docs/github
 projects=$work/projects
 code=$projects/code
 writing=$work/writing
-EF=$work/employers/EF
-instant=$work/employers/get_instant
-IOS=$instant/product/IOS/
-
-carl=167.99.186.102
-carol=137.184.168.142
-candace=147.182.150.113
-camil=178.128.232.3
-cato=147.182.146.123
-prod=$candace
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
@@ -151,21 +139,8 @@ function cl {
 # Prompt
 
 RPROMPT='' # Don't show anything to the right of the prompt.
-PROMPT='[%B%h%b | %F{202}%m%f.%F{35}%n%f | %D %* | $(git_super_status) | %F{159}%B%U%3c%u%b%f]
+PROMPT='[ %F{202}%m%f.%F{35}%n%f | %D %* | %F{159}%B%U%3c%u%b%f]
 > '
-
-## zsh-git-prompt
-ZSH_THEME_GIT_PROMPT_AHEAD="%{ʌ%G%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{v%G%}"
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{chg:%G%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{clean%G%}"
-ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{x%G%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{stg:%G%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{!trk%G%}"
 
 # No idea what this does.
 TRAPALRM() {
@@ -199,3 +174,24 @@ export PATH="$HOME/.amplify/bin:$PATH"
 #### FIG ENV VARIABLES ####
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# Set up nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
