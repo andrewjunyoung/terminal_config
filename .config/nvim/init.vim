@@ -21,8 +21,6 @@ endif
 call plug#begin()
 " {
 
-Plug 'SirVer/ultisnips' " Engine for python auto snippets, with vim-snippets.
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter' " Show git line changes on the left.
 Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
 Plug 'christoomey/vim-titlecase' " Capitalize only the first letter of words.
@@ -33,14 +31,24 @@ Plug 'morhetz/gruvbox' " Color theme.
 Plug 'mzlogin/vim-markdown-toc' " Auto generates tables of contents in markdown.
 Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
 Plug 'scrooloose/nerdtree' " Directory navigation in vim.
-Plug 'tpope/vim-commentary' " Better commenting tools.
 Plug 'tpope/vim-fugitive' " Git plugins for vim.
 Plug 'tpope/vim-surround' " Functions to surround text.
-Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/VisIncr' " Visual increment
+" coding
+Plug 'tpope/vim-commentary' " Better commenting tools.
+Plug "dense-analysis/ale" " async linting
+Plug 'Yggdroot/indentLine'
+" JS
+Plug 'pangloss/vim-javascript' " JS syntax highlighting
+" python
+" kotlin
+Plug 'udalov/kotlin-vim' " kotlin syntax highlighting.
+
+" Delete?
 Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
+
 " }
 call plug#end()
 
@@ -141,46 +149,20 @@ let g:gruvbox_contrast_dark = 'hard' " Must be one of {soft, medium, hard}.
 let g:gruvbox_contrast_light = 'hard' " Must be one of {soft, medium, hard}.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End gruvbox ""
-"" Begin syntastic """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Default settings, as recommended on https://github.com/vim-syntastic/syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" List of linters.
-let g:syntastic_python_checkers = [] "['python', 'pylint', 'mypy']
-let g:syntastic_python_pylint_args = "-d missing-docstring,invalid-name"
-let g:syntastic_python_mypy_args = "--ignore-missing-imports"
-let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntastic ""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End misc ""
-"" Begin mappings """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Begin imports """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if filereadable(expand("~/.config/nvim/mappings.vim"))
   source ~/.config/nvim/mappings.vim
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End mappings ""
-"" Begin settings """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if filereadable(expand("~/.config/nvim/settings.vim"))
   source ~/.config/nvim/settings.vim
 endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End settings ""
-"" Begin syntax """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if filereadable(expand("~/.config/nvim/syntax.vim"))
   source ~/.config/nvim/syntax.vim
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End syntax ##
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" End imports ""
 
