@@ -23,31 +23,27 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter' " Show git line changes on the left.
 Plug 'cespare/vim-toml' " Syntax highlighting for .toml files
-Plug 'christoomey/vim-titlecase' " Capitalize only the first letter of words.
 Plug 'cskeeters/vim-calutil' " Visual increment with calendar
 Plug 'dhruvasagar/vim-table-mode' " Fast commands for table editing.
-Plug 'honza/vim-snippets' " Engine for python auto snippets, with ultisnips.
 Plug 'morhetz/gruvbox' " Color theme.
 Plug 'mzlogin/vim-markdown-toc' " Auto generates tables of contents in markdown.
-Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
 Plug 'scrooloose/nerdtree' " Directory navigation in vim.
-Plug 'tpope/vim-fugitive' " Git plugins for vim.
+Plug 'tpope/vim-fugitive' " Git functions in vim.
 Plug 'tpope/vim-surround' " Functions to surround text.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/VisIncr' " Visual increment
-" coding
-Plug 'tpope/vim-commentary' " Better commenting tools.
-Plug "dense-analysis/ale" " async linting
+" Programming
+Plug 'ntpeters/vim-better-whitespace' " Tools to clean whitespace.
+Plug 'tpope/vim-commentary' " Better commenting
 Plug 'Yggdroot/indentLine'
-" JS
-Plug 'pangloss/vim-javascript' " JS syntax highlighting
-" python
-" kotlin
-Plug 'udalov/kotlin-vim' " kotlin syntax highlighting.
-
-" Delete?
-Plug 'ycm-core/YouCompleteMe' " Autocompletion for vim.
+Plug 'dense-analysis/ale' " Async linter
+" JS / TS
+Plug 'prettier/vim-prettier' " ES style linting
+" Terraform (TF)
+Plug 'hashivim/vim-terraform' " Terraform highlighting
+" Kotlin
+Plug 'udalov/kotlin-vim' " Vim syntax highlighting.
 
 " }
 call plug#end()
