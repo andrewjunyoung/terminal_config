@@ -24,8 +24,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions  #zsh-users/zsh-autosuggestions/
-  zsh-syntax-highlighting  #zsh-users/zsh-users/zsh-syntax-highlighting
+  zsh-autosuggestions  # zsh-users/zsh-autosuggestions/
+  zsh-syntax-highlighting  # zsh-users/zsh-users/zsh-syntax-highlighting
   history-substring-search
   git-prompt
   jira
@@ -101,24 +101,19 @@ docs=~/Documents
 # github
 github=$docs/github
 # dynamic
-dynamic=$docs/dynamic
-scripts=$dynamic/scripts
-rand=$code/scripts/rand
-lock=$code/scripts/lock
+scripts=$docs/scripts
+rand=$scripts/rand
+lock=$scripts/lock
 # archive
 archive=$docs/archive
 pics=$archive/pics
-aia=$pics/art/AI
 # static
-static=$docs/static
 me=$docs/local/me
-todo=$me/org/todo.md
-work=$me/work
+todo=$me/todo.md
 # projects
 github=$docs/github
 projects=$work/projects
 code=$projects/code
-writing=$work/writing
 
 # Vim config file locations.
 vim=~/.config/nvim/init.vim
@@ -131,16 +126,15 @@ zsh=~/.zshrc
 
 # Functions
 
-# TODO: I have no idea what this does.
 function cl {
   cd "$@" && l;
 }
 
 # Prompt
 
-RPROMPT='' # Don't show anything to the right of the prompt.
+RPROMPT='<'  # Right-aligned prompt.
 PROMPT='[ %F{202}%m%f.%F{35}%n%f | %D %* | %F{159}%B%U%3c%u%b%f]
-> '
+> '  # Left-aligned prompt
 
 # No idea what this does.
 TRAPALRM() {
