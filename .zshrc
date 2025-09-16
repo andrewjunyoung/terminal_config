@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ajy/.oh-my-zsh
 
@@ -63,6 +65,9 @@ function screenie() {
 }
 
 alias "c"="clear"
+alias "pmvv"="python -m venv .venv"
+alias "nr"="npm run"
+alias "cdkd"="cdk deploy"
 alias "d"="du -hd 3 | sort -rh | awk '{print NR "\t" $0}'"
 alias "g"="git"
 alias "l"="ls -ApG --color=auto" # With dotfiles
@@ -147,8 +152,6 @@ TRAPALRM() {
 export CLICOLOR=1
 # set colors for iterm2
 export TERM=xterm-256color
-# stderr
-exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ajy/.sdkman"
@@ -165,9 +168,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -187,5 +187,8 @@ unset __conda_setup
 
 # Set up nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
