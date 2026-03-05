@@ -1,5 +1,7 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ajy/.oh-my-zsh
 
@@ -29,10 +31,8 @@ plugins=(
   zsh-autosuggestions  # zsh-users/zsh-autosuggestions/
   zsh-syntax-highlighting  # zsh-users/zsh-users/zsh-syntax-highlighting
   history-substring-search
-  git-prompt
   jira
   colored-man-pages
-  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -55,6 +55,41 @@ autoload -Uz compinit
 compinit
 
 # Aliases
+[[ -f ~/.alii ]] && source ~/.alii
+
+alias "c"="clear"
+alias "pmvv"="python -m venv .venv"
+alias "nr"="npm run"
+alias "cdkd"="cdk deploy"
+alias "d"="du -hd 3 | sort -rh | awk '{print NR "\t" $0}'"
+alias "l"="ls -ApG --color=auto" # With dotfiles
+alias "la"="ls -pG --color=auto" # Without dotfiles
+alias "lock"="source \$scripts/lock"
+alias "n"="nvim"
+alias "o"="open"
+alias "pip"="pip3"
+alias "python"="python3"
+alias "rds"="rm .DS_Store"
+# An alternative to «tree» if your shell doesn't have it set up.
+alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias "k"="kubectl"
+
+# Git aliases
+alias "gst"="git status"
+alias "gp"="git push"
+alias "gb"="git branch"
+alias "gsm"="git submodule"
+alias "ga"="git add"
+alias "gl"="git pull"
+alias "gc"="git commit"
+alias "gd"="git diff"
+alias "gco"="git checkout"
+alias "gpsu"="git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin"
+
+# Functions
+function cl {
+  cd "$@" && l;
+}
 
 function up() {
   cd $(printf "%0.s../" $(seq 1 $1 ));
@@ -64,94 +99,12 @@ function screenie() {
   screencapture -o -l $(osascript -e 'tell app "iTerm" to id of window 1') $2
 }
 
-alias "c"="clear"
-alias "pmvv"="python -m venv .venv"
-alias "nr"="npm run"
-alias "cdkd"="cdk deploy"
-alias "d"="du -hd 3 | sort -rh | awk '{print NR "\t" $0}'"
-alias "g"="git"
-alias "l"="ls -ApG --color=auto" # With dotfiles
-alias "la"="ls -pG --color=auto" # Without dotfiles
-alias "lock"="source \$scripts/lock"
-alias "n"="nvim"
-alias "o"="open"
-alias "pip"="pip3"
-alias "python"="python3"
-alias "rds"="rm .DS_Store"
-alias "refresh"="clear; list"
-alias "restart"="exec zsh"
-# An alternative to «tree» if your shell doesn't have it set up.
-alias "show"="ls -ApR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-# Useful with latex compilation.
-alias "pdf"="o *.pdf"
-
-# Git aliases
-
-alias "gst"="git status"
-alias "gp"="git push"
-alias "gsm"="git submodule"
-alias "ga"="git add"
-alias "gl"="git pull"
-alias "gc"="git commit"
-alias "gd"="git diff"
-alias "gco"="git checkout"
-alias "gpsu"="git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin"
-
-# Exports
-
-music=~/Music/Music
-dl=~/Downloads
-docs=~/Documents
-
-# github
-github=$docs/github
-# dynamic
-scripts=$docs/scripts
-rand=$scripts/rand
-lock=$scripts/lock
-# archive
-archive=$docs/archive
-pics=$archive/pics
-# static
-me=$docs/local/me
-todo=$me/todo.md
-# projects
-github=$docs/github
-projects=$work/projects
-code=$projects/code
-
-# Vim config file locations.
-vim=~/.config/nvim/init.vim
-mappings=~/.config/nvim/mappings.vim
-syntax=~/.config/nvim/syntax.vim
-settings=~/.config/nvim/settings.vim
-
-# Zsh config file locations.
-zsh=~/.zshrc
-
-# Functions
-
-function cl {
-  cd "$@" && l;
-}
-
 # Prompt
-
-RPROMPT='<'  # Right-aligned prompt.
 PROMPT='[ %F{202}%m%f.%F{35}%n%f | %D %* | %F{159}%B%U%3c%u%b%f]
 > '  # Left-aligned prompt
 
-# No idea what this does.
-TRAPALRM() {
-    zle reset-prompt
-}
-
-# Colors
-
-# Set clicolor if you want ansi colors in iterm
-export CLICOLOR=1
-# set colors for iterm2
-export TERM=xterm-256color
+export CLICOLOR=1  # Set clicolor if you want ansi colors in iterm
+export TERM=xterm-256color  # set colors for iterm2
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ajy/.sdkman"
@@ -189,6 +142,3 @@ unset __conda_setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

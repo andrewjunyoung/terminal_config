@@ -1,0 +1,15 @@
+archive=$docs/archive
+code=$projects/code
+dl=~/Downloads
+docs=~/Documents
+github=$docs/github
+mappings=~/.config/nvim/mappings.vim
+me=$docs/local/me
+pics=$archive/pics
+projects=$work/projects
+rand=$scripts/rand
+scripts=$docs/scripts
+settings=~/.config/nvim/settings.vim
+syntax=~/.config/nvim/syntax.vim
+vim=~/.config/nvim/init.vim
+zsh=~/.zshrc
